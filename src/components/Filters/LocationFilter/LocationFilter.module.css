@@ -1,0 +1,23 @@
+.locationFilter {
+	margin-bottom: 20px;
+}
+
+.locationFilter label {
+	display: block;
+	font-size: 14px;
+	color: #6c757d;
+	margin-bottom: 8px;
+}
+
+.locationDisplay {
+	display: flex;
+	align-items: center;
+	padding: 10px 15px;
+	background-color: #f8f9fa;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.locationIcon {
+	margin-right: 8px;
+}

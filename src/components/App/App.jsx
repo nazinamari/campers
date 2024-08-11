@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from '../../pages/HomePage';
-import CatalogPage from '../../pages/CatalogPage';
+import CatalogPage from '../../pages/CatalogPage/CatalogPage';
 import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
 import FavoritesPage from '../../pages/FavoritesPage';
