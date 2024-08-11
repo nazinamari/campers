@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './components/App.jsx';
+import App from './components/App/App.jsx';
 import './index.css';
 import 'modern-normalize';
 import { BrowserRouter } from 'react-router-dom';
