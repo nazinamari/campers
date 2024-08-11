@@ -1,4 +1,4 @@
-import EquipmentFilter from './equipmentFilter/EquipmentFilter';
+import EquipmentFilter from './EquipmentFilter/EquipmentFilter';
 import css from './Filters.module.css';
 import LocationFilter from './LocationFilter/LocationFilter';
 import VehicleTypeFilter from './vehicleTypes/vehicleTypes';
