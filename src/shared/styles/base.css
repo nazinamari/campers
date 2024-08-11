@@ -1,0 +1,36 @@
+body {
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight);
+	color: var(--main-text-color);
+	margin: 0;
+	padding: 0;
+	background-color: var(--main-background-color);
+}
+
+button {
+	cursor: pointer;
+	font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: var(--margin);
+}
+
+ul,
+ol {
+	list-style: none;
+	margin: var(--margin);
+	padding: var(--padding);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
