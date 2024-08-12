@@ -6,7 +6,7 @@ export default function CatalogPage() {
 	return (
 		<div className={css.container}>
 			<Filters />
-			{/* <VehicleList campers={campers} /> */}
+			<CamperList />
 		</div>
 	);
 }
