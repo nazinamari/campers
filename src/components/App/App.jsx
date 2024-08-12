@@ -5,7 +5,7 @@ import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
 import FavoritesPage from '../../pages/FavoritesPage';
 import NotFoundPage from '../../pages/NotFoundPage';
-import SharedLayout from '../../shared/SharedLayout/SharedLayout';
+import SharedLayout from '../../shared/components/SharedLayout/SharedLayout';
 import AppBar from '../AppBar/AppBar';
 import css from './App.module.css';
 
