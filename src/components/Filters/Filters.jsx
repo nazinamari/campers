@@ -1,7 +1,7 @@
 import EquipmentFilter from './EquipmentFilter/EquipmentFilter';
 import css from './Filters.module.css';
 import LocationFilter from './LocationFilter/LocationFilter';
-import VehicleTypeFilter from './vehicleTypes/vehicleTypes';
+import VehicleTypeFilter from './VehicleTypes/VehicleTypes';
 
 export default function Filters() {
 	return (

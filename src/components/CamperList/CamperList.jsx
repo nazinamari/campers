@@ -9,7 +9,6 @@ import { fetchCampers } from '../../redux/catalog/operations';
 export default function CamperList() {
 	const dispatch = useDispatch();
 	const campers = useSelector(selectCampers);
-	console.log(campers);
 
 	useEffect(() => {
 		dispatch(fetchCampers());
@@ -18,7 +17,7 @@ export default function CamperList() {
 	return (
 		<List className={css.camperList}>
 			{campers.map((camper) => (
-				<CamperCard key={camper.id} camper={camper} />
+				<CamperCard key={camper._id} camper={camper} />
 			))}
 		</List>
 	);

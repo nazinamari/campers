@@ -1,4 +1,4 @@
-import css from './vehicleTypes.module.css';
+import css from './VehicleTypes.module.css';
 
 const vehicleTypes = [
 	{ label: 'Van', icon: '🚐' },
