@@ -1,29 +1,45 @@
 .camperCard {
-	border: 1px solid #ccc;
-	padding: 20px;
-	width: 300px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(var(--border-color), 0.2);
+	border-radius: 20px;
+	overflow: hidden;
+	background-color: var(--main-background-color);
+	/* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.camperContent {
+	display: flex;
+	padding: 24px;
 }
 
 .camperImg {
-	max-width: 100%;
+	width: 290px;
 	height: auto;
-	margin-bottom: 10px;
+	border-radius: 10px;
+	object-fit: cover;
 }
 
-.gallery {
+.camperDetails {
+	margin-left: 24px;
+	flex-grow: 1;
+	flex-direction: column;
+}
+
+.camperHeader {
 	display: flex;
-	gap: 10px;
 }
 
-.gallery img {
-	width: 80px;
-	height: auto;
+.camperTitle {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
 }
 
-/* .camperDetails {
-	margin-left: 16px;
-	flex: 1;
+.price {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
 }
 
 .rating {
@@ -43,4 +59,14 @@
 .price {
 	font-size: 1.5rem;
 	font-weight: bold;
+}
+
+/* .gallery {
+	display: flex;
+	gap: 10px;
+} */
+
+/* .gallery img {
+	width: 80px;
+	height: auto;
 } */

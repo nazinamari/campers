@@ -3,9 +3,10 @@
 	--font-weight: 400;
 	--font-size-base: 14px;
 	--main-text-color: black;
-	--second-text-color: gray;
+	/* --second-text-color: gray; */
 	--accent-color: orange;
-	--main-background-color: white;
+	--main-background-color: #fff;
+	--border-color: 16, 24, 40;
 
 	--transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
