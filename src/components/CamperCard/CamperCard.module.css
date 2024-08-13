@@ -21,6 +21,7 @@
 }
 
 .camperDetails {
+	width: 526px;
 	margin-left: 24px;
 	flex-grow: 1;
 	flex-direction: column;
@@ -28,6 +29,7 @@
 
 .camperHeader {
 	display: flex;
+	justify-content: space-between;
 }
 
 .camperTitle {
