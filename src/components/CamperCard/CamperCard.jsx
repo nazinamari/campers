@@ -3,15 +3,19 @@ import Button from '../../shared/components/Button/Button';
 import { formatPrice } from '../../shared/utils/formatPrice';
 import Features from '../Features/Features';
 import css from './CamperCard.module.css';
-import Modal from 'react-modal';
-
-Modal.setAppElement('#root');
+import CustomModal from '../../shared/components/Modal/Modal';
 
 export default function CamperCard({ camper }) {
 	const [open, setOpen] = useState(false);
-
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
+
+	const modalStyles = {
+		content: {
+			width: '982px',
+			height: '720px',
+		},
+	};
 	const titleImage = camper.gallery?.[0];
 
 	return (
@@ -36,15 +40,24 @@ export default function CamperCard({ camper }) {
 						Show more
 					</Button>
 
-					<Modal isOpen={open} onRequestClose={handleClose}>
-						<div>
-							<h2>All Features</h2>
-							<Features data={camper} />
-							<Button onClick={handleClose}>Close</Button>
-						</div>
-					</Modal>
+					<CustomModal
+						isOpen={open}
+						onRequestClose={handleClose}
+						title="All Features"
+						component={Features}
+						componentProps={{ data: camper }}
+						additionalStyles={modalStyles}
+					/>
 				</div>
 			</div>
 		</div>
 	);
 }
+
+// <Modal isOpen={open} onRequestClose={handleClose}>
+// 	<div>
+// 		<h2>All Features</h2>
+// 		<Features data={camper} />
+// 		{/* <Button onClick={handleClose}>Close</Button> */}
+// 	</div>
+// </Modal>;

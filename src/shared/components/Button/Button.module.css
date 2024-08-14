@@ -1,4 +1,4 @@
-.button {
+.btn {
 	border-radius: 200px;
 	background-color: var(--accent-color);
 	border: none;
@@ -16,7 +16,7 @@
 	transition: background-color var(--transition);
 }
 
-.button:hover,
-.button:focus {
+.btn:hover,
+.btn:focus {
 	background-color: var(--accent-hover-color);
 }

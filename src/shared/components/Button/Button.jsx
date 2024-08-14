@@ -7,11 +7,7 @@ export default function Button({
 	children,
 }) {
 	return (
-		<button
-			className={`${css.button} ${className}`}
-			type={type}
-			onClick={onClick}
-		>
+		<button className={`${css.btn} ${className}`} type={type} onClick={onClick}>
 			{children}
 		</button>
 	);
