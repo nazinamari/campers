@@ -1,8 +1,17 @@
+import { useState } from 'react';
+import Button from '../../shared/components/Button/Button';
 import { formatPrice } from '../../shared/utils/formatPrice';
+import Features from '../Features/Features';
 import css from './CamperCard.module.css';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 export default function CamperCard({ camper }) {
-	// console.log(camper);
+	const [open, setOpen] = useState(false);
+
+	const handleOpen = () => setOpen(true);
+	const handleClose = () => setOpen(false);
 	const titleImage = camper.gallery?.[0];
 
 	return (
@@ -18,41 +27,22 @@ export default function CamperCard({ camper }) {
 						<h2 className={css.camperTitle}>{camper.name}</h2>
 						<p className={css.price}>{formatPrice(camper.price)}</p>
 					</div>
-					<p>
-						<strong>Rating:</strong> {camper.rating} stars
-					</p>
-					<p>
-						<strong>Location:</strong> {camper.location}
-					</p>
-					<p>
-						<strong>Capacity:</strong> {camper.adults} adults, {camper.children}{' '}
-						children
-					</p>
-					<p>
-						<strong>Engine:</strong> {camper.engine}
-					</p>
-					<p>
-						<strong>Transmission:</strong> {camper.transmission}
-					</p>
-					<p>
-						<strong>Dimensions:</strong> {camper.length} L x {camper.width} W x{' '}
-						{camper.height} H
-					</p>
-					<p>
-						<strong>Fuel Consumption:</strong> {camper.consumption}
-					</p>
-					{/* <p>
-				<strong>Description:</strong> {camper.description}
-			</p> */}
-					<h3>Reviews:</h3>
-					{/* <ul>
-				{camper.reviews.map((review, index) => (
-					<li key={index}>
-						<strong>{review.reviewer_name}:</strong> {review.reviewer_rating}{' '}
-						stars - {review.comment}
-					</li>
-				))}
-			</ul> */}
+					<p>Rating: {camper.rating} stars</p>
+					<p>Location: {camper.location}</p>
+					{/* Відображаємо перші 6 характеристик */}
+					<Features data={camper} maxVisible={6} />
+
+					<Button className={css.showAllButton} onClick={handleOpen}>
+						Show more
+					</Button>
+
+					<Modal isOpen={open} onRequestClose={handleClose}>
+						<div>
+							<h2>All Features</h2>
+							<Features data={camper} />
+							<Button onClick={handleClose}>Close</Button>
+						</div>
+					</Modal>
 				</div>
 			</div>
 		</div>

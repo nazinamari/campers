@@ -1,0 +1,22 @@
+.button {
+	border-radius: 200px;
+	background-color: var(--accent-color);
+	border: none;
+	outline: transparent;
+	padding: 16px 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: -0.08px;
+
+	transition: background-color var(--transition);
+}
+
+.button:hover,
+.button:focus {
+	background-color: var(--accent-hover-color);
+}

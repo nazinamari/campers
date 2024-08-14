@@ -2,11 +2,22 @@
 	--font-family: 'Inter', sans-serif;
 	--font-weight: 400;
 	--font-size-base: 14px;
-	--main-text-color: black;
-	/* --second-text-color: gray; */
-	--accent-color: orange;
-	--main-background-color: #fff;
+	--main-text-color: #101828;
+	--second-text-color: #475467;
+	--accent-color: #e44848;
+	--accent-hover-color: #d84343;
+	--second-accent-color: #ffc531;
+	--button-color: #f2f4f7;
+	--input-color: #f7f7f7;
+
+	--white: #fff;
+	--black: #000;
 	--border-color: 16, 24, 40;
 
 	--transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
 }
