@@ -17,7 +17,9 @@ export default function CamperList() {
 	return (
 		<List className={css.camperList}>
 			{campers.map((camper) => (
-				<CamperCard key={camper._id} camper={camper} />
+				<li key={camper._id}>
+					<CamperCard camper={camper} />
+				</li>
 			))}
 		</List>
 	);

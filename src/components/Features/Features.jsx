@@ -3,51 +3,52 @@ import css from './Features.module.css';
 
 export default function Features({ data, maxVisible }) {
 	// Визначаємо всі можливі характеристики
+
 	const allFeatures = [
 		{
 			key: 'adults',
-			label: `${data.adults} adults`,
+			label: `${data?.adults || 0} adults`,
 			icon: '👥',
-			exists: data.adults > 0,
+			exists: data?.adults > 0,
 		},
 		{
 			key: 'transmission',
-			label: `${data.transmission}`,
+			label: `${data?.transmission || 'Unknown'}`,
 			icon: '🔧',
-			exists: data.transmission,
+			exists: !!data?.transmission,
 		},
 		{
 			key: 'engine',
-			label: `${data.engine}`,
+			label: `${data?.engine || 'Unknown'}`,
 			icon: '⛽',
-			exists: data.engine,
+			exists: !!data?.engine,
 		},
 		{
 			key: 'kitchen',
 			label: 'Kitchen',
 			icon: '🍴',
-			exists: data.details.kitchen,
+			exists: data?.details?.kitchen,
 		},
 		{
 			key: 'beds',
-			label: `${data.details.beds} beds`,
+			label: `${data?.details?.beds || 0} beds`,
 			icon: '🛏️',
-			exists: data.details.beds > 0,
+			exists: data?.details?.beds > 0,
 		},
 		{
 			key: 'airConditioner',
 			label: 'AC',
 			icon: '❄️',
-			exists: data.details.airConditioner,
+			exists: data?.details?.airConditioner,
 		},
-		{ key: 'radio', label: 'Radio', icon: '📻', exists: data.details.radio },
+		{ key: 'radio', label: 'Radio', icon: '📻', exists: data?.details?.radio },
 		{
 			key: 'hob',
-			label: `${data.details.hob} hob`,
+			label: `${data?.details?.hob || 0} hob`,
 			icon: '🔥',
-			exists: data.details.hob,
+			exists: data?.details?.hob > 0,
 		},
-		{ key: 'CD', label: 'CD', icon: '💿', exists: data.details.CD },
+		{ key: 'CD', label: 'CD', icon: '💿', exists: data?.details?.CD },
 		// Додайте інші характеристики тут
 	];
 
@@ -61,6 +62,7 @@ export default function Features({ data, maxVisible }) {
 
 	return (
 		<List className={css.features}>
+			<p>Hey</p>
 			{visibleFeatures.map((feature) => (
 				<div key={feature.key} className={css.featureItem}>
 					<span>{feature.icon}</span>

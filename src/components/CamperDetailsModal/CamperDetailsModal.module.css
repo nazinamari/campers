@@ -1,0 +1,54 @@
+.buttonWrapper {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
+}
+
+.buttonAddInfo {
+	padding: 10px 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.buttonAddInfo:hover {
+	background-color: #e0e0e0;
+}
+
+.activeTab {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: 1px solid #007bff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.activeTab:hover {
+	background-color: #0056b3;
+}
+
+.activeContainer {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+p {
+	font-size: 16px;
+	margin-top: 0;
+	padding: 20px;
+	background-color: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 4px;
+}

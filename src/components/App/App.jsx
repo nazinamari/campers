@@ -1,8 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from '../../pages/HomePage';
 import CatalogPage from '../../pages/CatalogPage/CatalogPage';
-import Features from '../Features/Features';
-import Reviews from '../Reviews/Reviews';
 import FavoritesPage from '../../pages/FavoritesPage';
 import SharedLayout from '../../shared/components/SharedLayout/SharedLayout';
 import AppBar from '../AppBar/AppBar';
@@ -17,11 +15,7 @@ export default function App() {
 			<SharedLayout>
 				<Routes>
 					<Route path="/" element={<HomePage />} />
-					<Route path="/catalog" element={<CatalogPage />}>
-						<Route path="features" element={<Features />} />
-						<Route path="reviews" element={<Reviews />} />
-					</Route>
-					<Route path="/catalog/:id" element={<CatalogPage />} />
+					<Route path="/catalog" element={<CatalogPage />} />
 					<Route path="/favorites" element={<FavoritesPage />} />
 					<Route path="*" element={<Navigate to="/" />} />
 				</Routes>

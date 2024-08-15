@@ -4,10 +4,16 @@ import { formatPrice } from '../../shared/utils/formatPrice';
 import Features from '../Features/Features';
 import css from './CamperCard.module.css';
 import CustomModal from '../../shared/components/Modal/Modal';
+import CamperDetailsModal from '../CamperDetailsModal/CamperDetailsModal';
 
 export default function CamperCard({ camper }) {
 	const [open, setOpen] = useState(false);
-	const handleOpen = () => setOpen(true);
+	const [initialTab, setInitialTab] = useState('Features');
+
+	const handleOpen = (tab = 'Features') => {
+		setInitialTab(tab);
+		setOpen(true);
+	};
 	const handleClose = () => setOpen(false);
 
 	const modalStyles = {
@@ -31,7 +37,16 @@ export default function CamperCard({ camper }) {
 						<h2 className={css.camperTitle}>{camper.name}</h2>
 						<p className={css.price}>{formatPrice(camper.price)}</p>
 					</div>
-					<p>Rating: {camper.rating} stars</p>
+					<a
+						href="#"
+						className={css.ratingLink}
+						onClick={(e) => {
+							e.preventDefault();
+							handleOpen('Reviews');
+						}}
+					>
+						Rating: {camper.rating} stars
+					</a>
 					<p>Location: {camper.location}</p>
 					{/* Відображаємо перші 6 характеристик */}
 					<Features data={camper} maxVisible={6} />
@@ -39,13 +54,12 @@ export default function CamperCard({ camper }) {
 					<Button className={css.showAllButton} onClick={handleOpen}>
 						Show more
 					</Button>
-
 					<CustomModal
 						isOpen={open}
 						onRequestClose={handleClose}
 						title="All Features"
-						component={Features}
-						componentProps={{ data: camper }}
+						component={CamperDetailsModal}
+						componentProps={{ data: camper, initialTab }}
 						additionalStyles={modalStyles}
 					/>
 				</div>
@@ -53,11 +67,3 @@ export default function CamperCard({ camper }) {
 		</div>
 	);
 }
-
-// <Modal isOpen={open} onRequestClose={handleClose}>
-// 	<div>
-// 		<h2>All Features</h2>
-// 		<Features data={camper} />
-// 		{/* <Button onClick={handleClose}>Close</Button> */}
-// 	</div>
-// </Modal>;
