@@ -3,7 +3,6 @@
 	flex-flow: wrap;
 	gap: 8px;
 	width: 526px;
-	margin-bottom: 24px;
 }
 .featureItem {
 	display: flex;
