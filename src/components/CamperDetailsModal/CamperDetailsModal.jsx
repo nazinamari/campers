@@ -1,20 +1,3 @@
-// import { Suspense } from 'react';
-// import { NavLink, Outlet } from 'react-router-dom';
-
-// export default function CamperDetailsModal({ data }) {
-// 	return (
-// 		<>
-// 			<p>{data.engine}</p>
-// 			<div>
-// 				<NavLink to={`/catalog/${data._id}/features`}>Features</NavLink>
-// 				<NavLink to={`/catalog/${data._id}/reviews`}>Reviews</NavLink>
-// 			</div>
-// 			<Suspense>
-// 				<Outlet />
-// 			</Suspense>
-// 		</>
-// 	);
-// }
 import { useEffect, useRef, useState } from 'react';
 import css from './CamperDetailsModal.module.css';
 import Features from '../Features/Features';
@@ -46,29 +29,6 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 			reviewsRef.current.scrollIntoView({ behavior: 'smooth' });
 		}
 	};
-
-	// <div className={css.camperContent}>
-	// {titleImage ? (
-	// 	<img src={titleImage} alt={camper.name} className={css.camperImg} />
-	// ) : (
-	// 	<p>No image available</p>
-	// )}
-	// <div className={css.camperDetails}>
-	// 	<div className={css.camperHeader}>
-	// 		<h2 className={css.camperTitle}>{camper.name}</h2>
-	// 		<p className={css.price}>{formatPrice(camper.price)}</p>
-	// 	</div>
-	// 	<a
-	// 		href="#"
-	// 		className={css.ratingLink}
-	// 		onClick={(e) => {
-	// 			e.preventDefault();
-	// 			handleOpen('Reviews');
-	// 		}}
-	// 	>
-	// 		Rating: {camper.rating} stars
-	// 	</a>
-	// 	<p>Location: {camper.location}</p>
 
 	return (
 		<div>

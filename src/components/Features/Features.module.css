@@ -1,3 +1,36 @@
 .features {
 	display: flex;
+	flex-flow: wrap;
+	gap: 8px;
+	width: 526px;
+	margin-bottom: 24px;
+}
+.featureItem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	border-radius: 100px;
+	padding: 12px 18px;
+	height: 44px;
+	background-color: rgb(242, 244, 247);
+}
+
+.icon {
+	stroke: var(--main-text-color);
+	fill: none;
+}
+
+.adultsIcon,
+.petrol,
+.gas,
+.toilet {
+	fill: var(--main-text-color);
+	stroke: none;
+}
+
+.label {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: var(--main-text-color);
 }

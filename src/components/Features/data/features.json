@@ -1,0 +1,92 @@
+[
+	{
+		"key": "adults",
+		"label": "{adults} adults",
+		"iconId": "i-people",
+		"className": "adultsIcon"
+	},
+	{
+		"key": "transmission",
+		"label": "{transmission}",
+		"iconId": "i-automatic"
+	},
+	{
+		"key": "engine",
+		"label": "Petrol",
+		"iconId": "i-petrol",
+		"className": "petrol"
+	},
+	{
+		"key": "kitchen",
+		"label": "Kitchen",
+		"iconId": "i-kitchen2"
+	},
+	{
+		"key": "beds",
+		"label": "{beds} beds",
+		"iconId": "i-bed"
+	},
+	{
+		"key": "airConditioner",
+		"label": "AC",
+		"iconId": "i-conditioner"
+	},
+	{
+		"key": "radio",
+		"label": "Radio",
+		"iconId": "i-radio"
+	},
+	{
+		"key": "hob",
+		"label": "{hob} hob",
+		"iconId": "i-hob"
+	},
+	{
+		"key": "CD",
+		"label": "CD",
+		"iconId": "i-cd"
+	},
+	{
+		"key": "gas",
+		"label": "Gas",
+		"iconId": "i-gas",
+		"className": "gas"
+	},
+	{
+		"key": "toilet",
+		"label": "Toilet",
+		"iconId": "i-toilet",
+		"className": "toilet"
+	},
+	{
+		"key": "water",
+		"label": "Water",
+		"iconId": "i-water"
+	},
+	{
+		"key": "freezer",
+		"label": "Freezer",
+		"iconId": "i-freezer"
+	},
+	{
+		"key": "air",
+		"label": "Air",
+		"iconId": "i-air2"
+	},
+	{
+		"key": "shower",
+		"label": "Shower",
+		"iconId": "i-shower"
+	},
+	{
+		"key": "microwave",
+		"label": "Microwave",
+		"iconId": "i-microwave"
+	},
+	{
+		"key": "children",
+		"label": "{children} children",
+		"iconId": "i-people",
+		"className": "adultsIcon"
+	}
+]
