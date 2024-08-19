@@ -28,7 +28,7 @@ export default function CustomModal({
 			<button onClick={onRequestClose} className={css.closeButton}>
 				<Icon className={css.iClose} id="i-close" width={16} height={16} />
 			</button>
-			<h2>{title}</h2>
+			<h1 style={{ display: 'none' }}>{title}</h1>
 			<div>{Component && <Component {...componentProps} />}</div>
 		</Modal>
 	);

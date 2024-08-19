@@ -17,6 +17,9 @@
 // }
 import { useEffect, useRef, useState } from 'react';
 import css from './CamperDetailsModal.module.css';
+import Features from '../Features/Features';
+import Reviews from '../Reviews/Reviews';
+import List from '../../shared/components/List/List';
 
 export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 	const [activeTab, setActiveTab] = useState(initialTab);
@@ -44,59 +47,44 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 		}
 	};
 
+	// <div className={css.camperContent}>
+	// {titleImage ? (
+	// 	<img src={titleImage} alt={camper.name} className={css.camperImg} />
+	// ) : (
+	// 	<p>No image available</p>
+	// )}
+	// <div className={css.camperDetails}>
+	// 	<div className={css.camperHeader}>
+	// 		<h2 className={css.camperTitle}>{camper.name}</h2>
+	// 		<p className={css.price}>{formatPrice(camper.price)}</p>
+	// 	</div>
+	// 	<a
+	// 		href="#"
+	// 		className={css.ratingLink}
+	// 		onClick={(e) => {
+	// 			e.preventDefault();
+	// 			handleOpen('Reviews');
+	// 		}}
+	// 	>
+	// 		Rating: {camper.rating} stars
+	// 	</a>
+	// 	<p>Location: {camper.location}</p>
+
 	return (
-		<>
-			<h2>{data.engine}</h2>
-			<p>
-				Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
-				laying out print, graphic or web designs. The passage is attributed to
-				an unknown typesetter in the 15th century who is thought to have
-				scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
-				type specimen book. It usually begins with: “Lorem ipsum dolor sit amet,
-				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-				et dolore magna aliqua.” The purpose of lorem ipsum is to create a
-				natural looking block of text (sentence, paragraph, page, etc.) that
-				doesn't distract from the layout. A practice not without controversy,
-				laying out pages with meaningless filler text can be very useful when
-				the focus is meant to be on design, not content. The passage experienced
-				a surge in popularity during the 1960s when Letraset used it on their
-				dry-transfer sheets, and again during the 90s as desktop publishers
-				bundled the text with their software. Today it's seen all around the
-				web; on templates, websites, and stock designs. Use our generator to get
-				your own, or read on for the authoritative history of lorem ipsum. Lorem
-				ipsum, or lipsum as it is sometimes known, is dummy text used in laying
-				out print, graphic or web designs. The passage is attributed to an
-				unknown typesetter in the 15th century who is thought to have scrambled
-				parts of Cicero's De Finibus Bonorum et Malorum for use in a type
-				specimen book. It usually begins with: “Lorem ipsum dolor sit amet,
-				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-				et dolore magna aliqua.” The purpose of lorem ipsum is to create a
-				natural looking block of text (sentence, paragraph, page, etc.) that
-				doesn't distract from the layout. A practice not without controversy,
-				laying out pages with meaningless filler text can be very useful when
-				the focus is meant to be on design, not content. The passage experienced
-				a surge in popularity during the 1960s when Letraset used it on their
-				dry-transfer sheets, and again during the 90s as desktop publishers
-				bundled the text with their software. Today it's seen all around the
-				web; on templates, websites, and stock designs. Use our generator to get
-				your own, or read on for the authoritative history of lorem ipsum. Lorem
-				ipsum, or lipsum as it is sometimes known, is dummy text used in laying
-				out print, graphic or web designs. The passage is attributed to an
-				unknown typesetter in the 15th century who is thought to have scrambled
-				parts of Cicero's De Finibus Bonorum et Malorum for use in a type
-				specimen book. It usually begins with: “Lorem ipsum dolor sit amet,
-				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-				et dolore magna aliqua.” The purpose of lorem ipsum is to create a
-				natural looking block of text (sentence, paragraph, page, etc.) that
-				doesn't distract from the layout. A practice not without controversy,
-				laying out pages with meaningless filler text can be very useful when
-				the focus is meant to be on design, not content. The passage experienced
-				a surge in popularity during the 1960s when Letraset used it on their
-				dry-transfer sheets, and again during the 90s as desktop publishers
-				bundled the text with their software. Today it's seen all around the
-				web; on templates, websites, and stock designs. Use our generator to get
-				your own, or read on for the authoritative history of lorem ipsum.
-			</p>
+		<div>
+			<h2 className={css.camperTitle}>{data.name}</h2>
+			<List className={css.gallery}>
+				{data.gallery.map((image, index) => (
+					<li key={index} className={css.galleryItem}>
+						<img
+							src={image}
+							alt={`${data.name} ${index + 1}`}
+							className={css.imgItem}
+						/>
+					</li>
+				))}
+			</List>
+
 			<div className={css.buttonWrapper}>
 				<button
 					type="button"
@@ -123,41 +111,7 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 				className={activeTab === 'Features' ? css.activeContainer : css.hidden}
 			>
 				<p>Features content goes here...</p>
-				<p>
-					Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
-					laying out print, graphic or web designs. The passage is attributed to
-					an unknown typesetter in the 15th century who is thought to have
-					scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
-					type specimen book. It usually begins with: “Lorem ipsum dolor sit
-					amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua.” The purpose of lorem ipsum is to
-					create a natural looking block of text (sentence, paragraph, page,
-					etc.) that doesn't distract from the layout. A practice not without
-					controversy, laying out pages with meaningless filler text can be very
-					useful when the focus is meant to be on design, not content. The
-					passage experienced a surge in popularity during the 1960s when
-					Letraset used it on their dry-transfer sheets, and again during the
-					90s as desktop publishers bundled the text with their software. Today
-					it's seen all around the web; on templates, websites, and stock
-					designs. Use our generator to get your own, or read on for the
-					authoritative history of lorem ipsum. Lorem ipsum, or lipsum as it is
-					sometimes known, is dummy text used in laying out print, graphic or
-					web designs. The passage is attributed to an unknown typesetter in the
-					15th century who is thought to have scrambled parts of Cicero's De
-					Finibus Bonorum et Malorum for use in a type specimen book. It usually
-					begins with: “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
-					The purpose of lorem ipsum is to create a natural looking block of
-					text (sentence, paragraph, page, etc.) that doesn't distract from the
-					layout. A practice not without controversy, laying out pages with
-					meaningless filler text can be very useful when the focus is meant to
-					be on design, not content. The passage experienced a surge in
-					popularity during the 1960s when Letraset used it on their
-					dry-transfer sheets, and again during the 90s as desktop publishers
-					bundled the text with their software. Today it's seen all around the
-					web; on templates, websites, and stock designs. Use our generator to
-					get your own, or read on for the authoritative history of lorem ipsum.
-				</p>
+				<Features data={data} />
 			</div>
 
 			<div
@@ -165,42 +119,8 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 				className={activeTab === 'Reviews' ? css.activeContainer : css.hidden}
 			>
 				<p>Reviews content goes here...</p>
-				<p>
-					Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
-					laying out print, graphic or web designs. The passage is attributed to
-					an unknown typesetter in the 15th century who is thought to have
-					scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
-					type specimen book. It usually begins with: “Lorem ipsum dolor sit
-					amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-					labore et dolore magna aliqua.” The purpose of lorem ipsum is to
-					create a natural looking block of text (sentence, paragraph, page,
-					etc.) that doesn't distract from the layout. A practice not without
-					controversy, laying out pages with meaningless filler text can be very
-					useful when the focus is meant to be on design, not content. The
-					passage experienced a surge in popularity during the 1960s when
-					Letraset used it on their dry-transfer sheets, and again during the
-					90s as desktop publishers bundled the text with their software. Today
-					it's seen all around the web; on templates, websites, and stock
-					designs. Use our generator to get your own, or read on for the
-					authoritative history of lorem ipsum. Lorem ipsum, or lipsum as it is
-					sometimes known, is dummy text used in laying out print, graphic or
-					web designs. The passage is attributed to an unknown typesetter in the
-					15th century who is thought to have scrambled parts of Cicero's De
-					Finibus Bonorum et Malorum for use in a type specimen book. It usually
-					begins with: “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
-					The purpose of lorem ipsum is to create a natural looking block of
-					text (sentence, paragraph, page, etc.) that doesn't distract from the
-					layout. A practice not without controversy, laying out pages with
-					meaningless filler text can be very useful when the focus is meant to
-					be on design, not content. The passage experienced a surge in
-					popularity during the 1960s when Letraset used it on their
-					dry-transfer sheets, and again during the 90s as desktop publishers
-					bundled the text with their software. Today it's seen all around the
-					web; on templates, websites, and stock designs. Use our generator to
-					get your own, or read on for the authoritative history of lorem ipsum.
-				</p>
+				<Reviews data={data} />
 			</div>
-		</>
+		</div>
 	);
 }
