@@ -4,15 +4,16 @@ import CatalogPage from '../../pages/CatalogPage/CatalogPage';
 import FavoritesPage from '../../pages/FavoritesPage';
 import SharedLayout from '../../shared/components/SharedLayout/SharedLayout';
 import AppBar from '../AppBar/AppBar';
-import css from './App.module.css';
 
 export default function App() {
 	const location = useLocation();
+	const isHomePage = location.pathname === '/';
 
 	return (
-		<div className={css.container}>
-			{location.pathname !== '/' && <AppBar />}
+		<>
+			{!isHomePage && <AppBar />}
 			<SharedLayout>
+				{!isHomePage && <AppBar />}
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/catalog" element={<CatalogPage />} />
@@ -20,6 +21,6 @@ export default function App() {
 					<Route path="*" element={<Navigate to="/" />} />
 				</Routes>
 			</SharedLayout>
-		</div>
+		</>
 	);
 }

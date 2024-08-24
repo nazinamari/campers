@@ -1,3 +1,6 @@
 .container {
-	padding-top: 100px;
+	width: 1440px;
+	margin: 0 auto;
+	padding: var(--header-height) 64px 0px 64px;
+	height: 100vh;
 }

@@ -1,0 +1,28 @@
+.logoGroup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	fill: var(--main-text-color);
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.logoGroup:hover {
+	fill: var(--accent-color);
+	color: var(--accent-color);
+}
+
+.link {
+	text-decoration: none;
+	color: var(--main-text-color);
+}
+
+.link:hover,
+.link:focus {
+	color: var(--accent-color);
+}
+
+.isActive {
+	color: var(--accent-color);
+}
