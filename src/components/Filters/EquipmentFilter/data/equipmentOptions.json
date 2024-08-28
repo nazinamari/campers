@@ -1,0 +1,7 @@
+[
+	{ "label": "AC", "icon": "🌬️" },
+	{ "label": "Automatic", "icon": "⚙️" },
+	{ "label": "Kitchen", "icon": "🍴" },
+	{ "label": "TV", "icon": "📺" },
+	{ "label": "Shower/WC", "icon": "🚿" }
+]
