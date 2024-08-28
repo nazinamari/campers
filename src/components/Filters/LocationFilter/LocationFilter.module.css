@@ -1,23 +1,44 @@
 .locationFilter {
 	margin-bottom: 20px;
+	position: relative;
+	width: 100%;
 }
 
 .locationFilter label {
 	display: block;
-	font-size: 14px;
-	color: #6c757d;
+	font-size: 16px;
+	font-weight: 500px;
+	line-height: 24px;
+	color: var(--main-text-color);
+	opacity: 0.6;
 	margin-bottom: 8px;
 }
 
-.locationDisplay {
-	display: flex;
-	align-items: center;
-	padding: 10px 15px;
-	background-color: #f8f9fa;
+.locationInput {
+	width: 100%;
+	padding: 18px 18px;
+	border: 2px solid transparent;
 	border-radius: 10px;
-	cursor: pointer;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+	background-color: var(--input-color);
+	color: var(--main-text-color);
+	transition: border-color var(--transition);
+	padding-left: 44px;
+}
+
+.locationInput:focus {
+	border-color: var(--focus-border-color);
+	outline: none;
 }
 
 .locationIcon {
-	margin-right: 8px;
+	position: absolute;
+	left: 18px;
+	top: 66%;
+	transform: translateY(-50%);
+	fill: none;
+	stroke: var(--main-text-color);
+	margin-right: 4px;
 }

@@ -1,3 +1,4 @@
+import Button from '../../shared/components/Button/Button';
 import EquipmentFilter from './EquipmentFilter/EquipmentFilter';
 import css from './Filters.module.css';
 import LocationFilter from './LocationFilter/LocationFilter';
@@ -11,7 +12,7 @@ export default function Filters() {
 			<EquipmentFilter />
 			<h3>Vehicle type</h3>
 			<VehicleTypeFilter />
-			<button className={css.searchBtn}>Search</button>
+			<Button className={css.searchBtn}>Search</Button>
 		</aside>
 	);
 }

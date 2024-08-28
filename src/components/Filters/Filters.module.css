@@ -1,18 +1,9 @@
 .filters {
 	width: 360px;
-	background-color: #f9f9f9;
-	border-radius: 10px;
+	background-color: #fff;
 }
 
 .searchBtn {
-	background-color: #ff6b6b;
-	color: white;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-}
-
-.searchBtn:hover,
-.searchBtn:focus {
-	background-color: #ff4b4b;
+	padding-left: 60px;
+	padding-right: 60px;
 }
