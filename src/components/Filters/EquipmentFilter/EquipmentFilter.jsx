@@ -1,34 +1,33 @@
-import { useState } from 'react';
-import css from './EquipmentFilter.module.css';
-import equipmentOptions from './data/equipmentOptions.json';
 import clsx from 'clsx';
+import css from './EquipmentFilter.module.css';
+import equipmentOptions from './data/equipmentOptions.json'; // Упевнись, що цей файл імпортовано правильно
 import Icon from '../../../shared/Icon/Icon';
+import { useState } from 'react';
 
 export default function EquipmentFilter() {
-	const [selectedOption, setSelectedOption] = useState('');
+	const [selectedOptions, setSelectedOptions] = useState([]);
 
-	const handleOptionChange = (event) => {
-		setSelectedOption(event.target.value);
+	const handleOptionClick = (value) => {
+		setSelectedOptions((prevSelectedOptions) => {
+			if (prevSelectedOptions.includes(value)) {
+				return prevSelectedOptions.filter((option) => option !== value);
+			} else {
+				return [...prevSelectedOptions, value];
+			}
+		});
 	};
 
 	return (
 		<div className={css.equipmentFilter}>
 			{equipmentOptions.map((option) => (
-				<label
+				<div
 					key={option.label}
 					className={clsx(
 						css.filterOption,
-						selectedOption === option.label && css.checked
+						selectedOptions.includes(option.label) && css.checked
 					)}
+					onClick={() => handleOptionClick(option.label)}
 				>
-					<input
-						type="radio"
-						name="equipment"
-						value={option.label}
-						checked={selectedOption === option.label}
-						onChange={handleOptionChange}
-						className={css.filterInput}
-					/>
 					<div className={css.info}>
 						<Icon
 							className={`${css.filterIcon} ${css[option.className] || ''}`}
@@ -38,7 +37,7 @@ export default function EquipmentFilter() {
 						/>
 						{option.label}
 					</div>
-				</label>
+				</div>
 			))}
 		</div>
 	);

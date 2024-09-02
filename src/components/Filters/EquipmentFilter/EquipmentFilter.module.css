@@ -24,6 +24,7 @@
 
 .checked {
 	border: 1px solid var(--accent-color);
+	background-color: #ffe9e9;
 }
 
 .filterInput {
