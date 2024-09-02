@@ -1,12 +1,19 @@
-import { useState } from 'react';
+// import { useEffect } from 'react';
 import css from './LocationFilter.module.css';
 import Icon from '../../../shared/Icon/Icon';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { setLocation } from '../../../redux/filter/slice';
 
-export default function LocationFilter() {
-	const [location, setLocation] = useState('Kyiv, Ukraine');
+export default function LocationFilter({ currentLocation, onLocationChange }) {
+	const [localLocation, setLocalLocation] = useState(currentLocation);
 
-	const handleLocationChange = (e) => {
-		setLocation(e.target.value);
+	const handleLocationChange = (event) => {
+		setLocalLocation(event.target.value);
+	};
+
+	const handleBlur = () => {
+		onLocationChange(localLocation);
 	};
 
 	return (
@@ -15,8 +22,9 @@ export default function LocationFilter() {
 			<input
 				id="location"
 				type="text"
-				value={location}
+				value={localLocation}
 				onChange={handleLocationChange}
+				onBlur={handleBlur}
 				className={css.locationInput}
 				placeholder="Enter location"
 			/>
