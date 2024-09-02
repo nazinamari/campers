@@ -35,7 +35,7 @@ export default function EquipmentFilter() {
 							width="32"
 							height="32"
 						/>
-						{option.label}
+						<span>{option.label}</span>
 					</div>
 				</div>
 			))}

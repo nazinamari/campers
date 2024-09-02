@@ -35,7 +35,7 @@ export default function VehicleTypeFilter() {
 							width="32"
 							height="32"
 						/>
-						{type.label}
+						<span>{type.label}</span>
 					</div>
 				</div>
 			))}
