@@ -2,6 +2,7 @@ import { useState } from 'react';
 import css from './EquipmentFilter.module.css';
 import equipmentOptions from './data/equipmentOptions.json';
 import clsx from 'clsx';
+import Icon from '../../../shared/Icon/Icon';
 
 export default function EquipmentFilter() {
 	const [selectedOption, setSelectedOption] = useState('');
@@ -29,7 +30,12 @@ export default function EquipmentFilter() {
 						className={css.filterInput}
 					/>
 					<div className={css.info}>
-						<span className={css.filterIcon}>{option.icon}</span>
+						<Icon
+							className={`${css.filterIcon} ${css[option.className] || ''}`}
+							id={option.iconId}
+							width="32"
+							height="32"
+						/>
 						{option.label}
 					</div>
 				</label>

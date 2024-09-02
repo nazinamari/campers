@@ -41,9 +41,16 @@
 	display: block;
 	font-size: 24px;
 	margin-bottom: 5px;
+	fill: none;
+	stroke: var(--main-text-color);
+}
+
+.icon_ac {
+	stroke: none;
 }
 
 .info {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }

@@ -1,7 +1,7 @@
 [
-	{ "label": "AC", "icon": "🌬️" },
-	{ "label": "Automatic", "icon": "⚙️" },
-	{ "label": "Kitchen", "icon": "🍴" },
-	{ "label": "TV", "icon": "📺" },
-	{ "label": "Shower/WC", "icon": "🚿" }
+	{ "label": "AC", "iconId": "AC", "className": "icon_ac" },
+	{ "label": "Automatic", "iconId": "i-automatic2" },
+	{ "label": "Kitchen", "iconId": "i-kitchen" },
+	{ "label": "TV", "iconId": "i-tv" },
+	{ "label": "Shower/WC", "iconId": "i-shower" }
 ]
