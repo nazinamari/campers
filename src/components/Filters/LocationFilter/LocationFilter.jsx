@@ -1,9 +1,6 @@
-// import { useEffect } from 'react';
 import css from './LocationFilter.module.css';
 import Icon from '../../../shared/Icon/Icon';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { setLocation } from '../../../redux/filter/slice';
 
 export default function LocationFilter({ currentLocation, onLocationChange }) {
 	const [localLocation, setLocalLocation] = useState(currentLocation);
