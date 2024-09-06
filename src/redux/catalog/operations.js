@@ -34,25 +34,71 @@ export const fetchFilteredCampers = createAsyncThunk(
 			const filters = selectFilter(state);
 			const currentPage = state.catalog.page;
 
+			// Ініціалізація параметрів запиту
 			const params = {
 				page: currentPage + 1,
 				limit: PAGE_LIMIT,
 			};
 
-			// Додаємо фільтри до параметрів лише якщо вони є
+			// Обробка фільтрів
 			if (filters.location) {
-				params.location = filters.location;
+				params.location = filters.location.toLowerCase(); // Зменшення до нижнього регістру
 			}
 			if (filters.equipment.length > 0) {
-				params.equipment = filters.equipment.join(',');
+				params.equipment = filters.equipment
+					.map((eq) => eq.toLowerCase())
+					.join(','); // Форматування для запиту
 			}
 			if (filters.type.length > 0) {
-				params.type = filters.type.join(',');
+				params.type = filters.type.toLowerCase(); // Зменшення до нижнього регістру
 			}
 
+			// Обробка details
+			if (filters.details) {
+				Object.keys(filters.details).forEach((detailKey) => {
+					const detailValue = filters.details[detailKey];
+					if (detailValue) {
+						params[`details_${detailKey}`] = detailValue.toLowerCase();
+					}
+				});
+			}
+
+			// Запит до API
 			const response = await instance.get('/campers', { params });
 
-			return response.data;
+			// Витягування даних з відповіді
+			let filteredCampers = response.data;
+
+			// Фільтрація даних після отримання відповіді (якщо необхідно)
+			if (filters.equipment.length > 0) {
+				filteredCampers = filteredCampers.filter(
+					(item) =>
+						item.details &&
+						filters.equipment.some(
+							(eq) => item.details[eq] || item.details[eq] === undefined
+						)
+				);
+			}
+
+			if (filters.type) {
+				filteredCampers = filteredCampers.filter(
+					(item) => item.form === filters.type
+				);
+			}
+
+			const [countryFilter, cityFilter] = filters.location
+				? filters.location.toLowerCase().split(', ')
+				: [null, null];
+
+			const result = filteredCampers.filter((item) => {
+				const [country, city] = item.location.toLowerCase().split(', ');
+				return (
+					(!cityFilter || city.includes(cityFilter)) &&
+					(!countryFilter || country.includes(countryFilter))
+				);
+			});
+
+			return result;
 		} catch (error) {
 			toast.error('Failed to load filtered campers.');
 			return thunkAPI.rejectWithValue(error.message);

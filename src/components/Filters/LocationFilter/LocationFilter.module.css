@@ -42,3 +42,32 @@
 	stroke: var(--main-text-color);
 	margin-right: 4px;
 }
+
+.locationList {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-height: 200px;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+}
+
+.locationItem {
+	padding: 10px 12px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #333;
+}
+
+.locationItem:hover {
+	background-color: #f0f0f0;
+}
+
+.locationItem:active {
+	background-color: #e0e0e0;
+}

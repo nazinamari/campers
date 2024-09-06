@@ -1,20 +1,23 @@
 import clsx from 'clsx';
 import css from './VehicleTypes.module.css';
 import Icon from '../../../shared/Icon/Icon';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import vehicleTypes from './data/vehicleTypes.json';
 
-export default function VehicleTypeFilter() {
+export default function VehicleTypeFilter({ currentType, onTypeChange }) {
 	const [selectedOptions, setSelectedOptions] = useState([]);
 
+	useEffect(() => {
+		setSelectedOptions(currentType);
+	}, [currentType]);
+
 	const handleOptionClick = (value) => {
-		setSelectedOptions((prevSelectedOptions) => {
-			if (prevSelectedOptions.includes(value)) {
-				return prevSelectedOptions.filter((option) => option !== value);
-			} else {
-				return [...prevSelectedOptions, value];
-			}
-		});
+		const newSelection = selectedOptions.includes(value)
+			? selectedOptions.filter((option) => option !== value)
+			: [...selectedOptions, value];
+
+		setSelectedOptions(newSelection);
+		onTypeChange(newSelection);
 	};
 
 	return (

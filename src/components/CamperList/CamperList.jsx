@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCampers } from '../../redux/catalog/selectors';
 import List from '../../shared/components/List/List';
 import CamperCard from '../CamperCard/CamperCard';
 import css from './CamperList.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampers } from '../../redux/catalog/operations';
+import { fetchFilteredCampers } from '../../redux/catalog/operations';
 import { selectFilter } from '../../redux/filter/selectors';
 
 export default function CamperList() {
@@ -13,23 +13,37 @@ export default function CamperList() {
 	const filters = useSelector(selectFilter);
 	const [filteredCampers, setFilteredCampers] = useState([]);
 
-	// Завантаження всіх кемперів при первинному завантаженні компонента
+	// Завантаження кемперів при первинному завантаженні компонента та при зміні фільтрів
 	useEffect(() => {
-		dispatch(fetchCampers());
-	}, [dispatch]);
+		dispatch(fetchFilteredCampers()); // Викликаємо екшн для фільтрованого завантаження кемперів
+	}, [dispatch, filters]);
 
-	// Фільтрація кемперів при зміні фільтрів
+	// Фільтрація кемперів на основі фільтрів з API
 	useEffect(() => {
 		if (filters.location || filters.equipment.length > 0 || filters.type) {
 			// Фільтрація кемперів на основі фільтрів
 			const newFilteredCampers = allCampers.filter((camper) => {
-				// Фільтрування по всіх критеріях
-				return (
-					(!filters.location || camper.location.includes(filters.location)) &&
-					(filters.equipment.length === 0 ||
-						filters.equipment.every((eq) => camper.equipment.includes(eq))) &&
-					(!filters.type || camper.type === filters.type)
-				);
+				const matchesLocation = filters.location
+					? camper.location
+							.toLowerCase()
+							.includes(filters.location.toLowerCase())
+					: true;
+
+				const matchesEquipment =
+					filters.equipment.length > 0
+						? camper.equipment &&
+						  filters.equipment.every((eq) =>
+								camper.equipment
+									.map((e) => e.toLowerCase())
+									.includes(eq.toLowerCase())
+						  )
+						: true;
+
+				const matchesType = filters.type
+					? camper.type.toLowerCase() === filters.type.toLowerCase()
+					: true;
+
+				return matchesLocation && matchesEquipment && matchesType;
 			});
 			setFilteredCampers(newFilteredCampers);
 		} else {
@@ -47,7 +61,7 @@ export default function CamperList() {
 					</li>
 				))
 			) : (
-				<li>No campers found</li> // Покажіть повідомлення, якщо нічого не знайдено
+				<li>No campers found</li> // Повідомлення, якщо кемперів не знайдено
 			)}
 		</List>
 	);

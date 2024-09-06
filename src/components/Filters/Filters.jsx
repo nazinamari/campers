@@ -5,13 +5,13 @@ import LocationFilter from './LocationFilter/LocationFilter';
 import VehicleTypeFilter from './VehicleTypes/VehicleTypes';
 import List from '../../shared/components/List/List';
 import {
-	selectEquipment,
 	selectLocation,
+	selectEquipment,
 	selectType,
 } from '../../redux/filter/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilteredCampers } from '../../redux/catalog/operations';
-import { setEquipment, setLocation, setType } from '../../redux/filter/slice';
+import { setLocation, setEquipment, setType } from '../../redux/filter/slice';
 import { useEffect, useState } from 'react';
 
 export default function Filters() {
@@ -21,20 +21,32 @@ export default function Filters() {
 	const type = useSelector(selectType);
 
 	const [localLocation, setLocalLocation] = useState(location);
+	const [localEquipment, setLocalEquipment] = useState(equipment);
+	const [localType, setLocalType] = useState(type);
 
 	useEffect(() => {
 		setLocalLocation(location);
 	}, [location]);
 
+	useEffect(() => {
+		setLocalEquipment(equipment);
+	}, [equipment]);
+
+	useEffect(() => {
+		setLocalType(type);
+	}, [type]);
+
 	const handleSearchClick = () => {
 		dispatch(setLocation(localLocation));
+		dispatch(setEquipment(localEquipment));
+		dispatch(setType(localType));
 		dispatch(fetchFilteredCampers());
 	};
 
 	return (
 		<aside className={css.filters}>
 			<LocationFilter
-				currentLocation={localLocation} // Використовуємо локальний стан
+				currentLocation={localLocation}
 				onLocationChange={(newLocation) => setLocalLocation(newLocation)}
 			/>
 			<List className={css.filter__list}>
@@ -43,10 +55,9 @@ export default function Filters() {
 					<h2 className={css.item__title}>Vehicle equipment</h2>
 					<div className={css.separator}></div>
 					<EquipmentFilter
-						className={css.equipmentFilter}
-						currentEquipment={equipment}
+						currentEquipment={localEquipment}
 						onEquipmentChange={(newEquipment) =>
-							dispatch(setEquipment(newEquipment))
+							setLocalEquipment(newEquipment)
 						}
 					/>
 				</li>
@@ -54,8 +65,8 @@ export default function Filters() {
 					<h2 className={css.item__title}>Vehicle type</h2>
 					<div className={css.separator}></div>
 					<VehicleTypeFilter
-						currentType={type}
-						onTypeChange={(newType) => dispatch(setType(newType))}
+						currentType={localType}
+						onTypeChange={(newType) => setLocalType(newType)}
 					/>
 				</li>
 			</List>

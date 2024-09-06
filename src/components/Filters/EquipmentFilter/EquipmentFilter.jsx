@@ -1,21 +1,31 @@
 import clsx from 'clsx';
 import css from './EquipmentFilter.module.css';
-import equipmentOptions from './data/equipmentOptions.json'; // Упевнись, що цей файл імпортовано правильно
+import equipmentOptions from './data/equipmentOptions.json';
 import Icon from '../../../shared/Icon/Icon';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function EquipmentFilter() {
+export default function EquipmentFilter({
+	currentEquipment,
+	onEquipmentChange,
+}) {
 	const [selectedOptions, setSelectedOptions] = useState([]);
 
+	useEffect(() => {
+		setSelectedOptions(currentEquipment);
+	}, [currentEquipment]);
+
 	const handleOptionClick = (value) => {
-		setSelectedOptions((prevSelectedOptions) => {
-			if (prevSelectedOptions.includes(value)) {
-				return prevSelectedOptions.filter((option) => option !== value);
-			} else {
-				return [...prevSelectedOptions, value];
-			}
-		});
+		const newSelection = selectedOptions.includes(value)
+			? selectedOptions.filter((option) => option !== value)
+			: [...selectedOptions, value];
+
+		setSelectedOptions(newSelection);
+		onEquipmentChange(newSelection);
 	};
+
+	useEffect(() => {
+		console.log(selectedOptions);
+	}, [selectedOptions]);
 
 	return (
 		<div className={css.equipmentFilter}>
