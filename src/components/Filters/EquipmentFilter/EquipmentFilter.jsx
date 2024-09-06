@@ -23,9 +23,9 @@ export default function EquipmentFilter({
 		onEquipmentChange(newSelection);
 	};
 
-	useEffect(() => {
-		console.log(selectedOptions);
-	}, [selectedOptions]);
+	// useEffect(() => {
+	// 	console.log(selectedOptions);
+	// }, [selectedOptions]);
 
 	return (
 		<div className={css.equipmentFilter}>

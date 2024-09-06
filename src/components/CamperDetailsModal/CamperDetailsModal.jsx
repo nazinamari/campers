@@ -3,6 +3,7 @@ import css from './CamperDetailsModal.module.css';
 import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
 import List from '../../shared/components/List/List';
+import CamperInfo from '../CamperCard/CamperInfo/CamperInfo';
 
 export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 	const [activeTab, setActiveTab] = useState(initialTab);
@@ -31,8 +32,10 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 	};
 
 	return (
-		<div>
+		<>
 			<h2 className={css.camperTitle}>{data.name}</h2>
+			<CamperInfo camper={data} />
+
 			<List className={css.gallery}>
 				{data.gallery.map((image, index) => (
 					<li key={index} className={css.galleryItem}>
@@ -81,6 +84,6 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 				<p>Reviews content goes here...</p>
 				<Reviews data={data} />
 			</div>
-		</div>
+		</>
 	);
 }
