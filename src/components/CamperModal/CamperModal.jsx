@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import css from './CamperDetailsModal.module.css';
+import css from './CamperModal.module.css';
 import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
 import List from '../../shared/components/List/List';
-import CamperInfo from '../CamperCard/CamperInfo/CamperInfo';
+import CamperInfo from '../CamperInfo/CamperInfo';
 
-export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
+export default function CamperModal({ data, initialTab = 'Features' }) {
 	const [activeTab, setActiveTab] = useState(initialTab);
-
 	const featuresRef = useRef(null);
 	const reviewsRef = useRef(null);
 
@@ -34,7 +33,7 @@ export default function CamperDetailsModal({ data, initialTab = 'Features' }) {
 	return (
 		<>
 			<h2 className={css.camperTitle}>{data.name}</h2>
-			<CamperInfo camper={data} />
+			<CamperInfo camper={data} onTabChange={handleTabChange} />
 
 			<List className={css.gallery}>
 				{data.gallery.map((image, index) => (

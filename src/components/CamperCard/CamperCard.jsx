@@ -4,14 +4,14 @@ import { formatPrice } from '../../shared/utils/formatPrice';
 import Features from '../Features/Features';
 import css from './CamperCard.module.css';
 import CustomModal from '../../shared/components/Modal/Modal';
-import CamperDetailsModal from '../CamperDetailsModal/CamperDetailsModal';
-import Icon from '../../shared/Icon/Icon';
+import CamperDetailsModal from '../CamperModal/CamperModal';
+import CamperInfo from '../CamperInfo/CamperInfo';
 
 export default function CamperCard({ camper }) {
 	const [open, setOpen] = useState(false);
 	const [initialTab, setInitialTab] = useState('Features');
 
-	const handleOpen = (tab = 'Features') => {
+	const handleOpen = (tab) => {
 		setInitialTab(tab);
 		setOpen(true);
 	};
@@ -38,35 +38,7 @@ export default function CamperCard({ camper }) {
 						<h2 className={css.camperTitle}>{camper.name}</h2>
 						<p className={css.price}>{formatPrice(camper.price)}</p>
 					</div>
-					<div className={css.camperInfo}>
-						<a
-							href="#"
-							className={css.ratingLink}
-							onClick={(e) => {
-								e.preventDefault();
-								handleOpen('Reviews');
-							}}
-						>
-							<div className={css.textContainer}>
-								<Icon
-									className={css.i_star}
-									id="i-star"
-									width="16"
-									height="16"
-								/>
-								<div className={css.reviewContainer}>
-									<div className={css.reviewInfo}>
-										{camper.rating} ({camper.reviews.length} Reviews)
-									</div>
-									<hr className={css.underline} />
-								</div>
-							</div>
-						</a>
-						<Icon className={css.i_pin} id="i-map_pin" width="16" height="16" />
-						<p className={css.location}>
-							{camper.location.split(', ').reverse().join(', ')}
-						</p>
-					</div>
+					<CamperInfo camper={camper} onTabChange={handleOpen} />
 					<p className={css.description}>{camper.description.slice(0, 61)}..</p>
 
 					{/* Відображаємо перші 6 характеристик */}
