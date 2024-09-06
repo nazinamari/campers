@@ -3,12 +3,15 @@ export const formatPrice = (price, currency = 'EUR', locale = 'de-DE') => {
 		return '';
 	}
 
-	const formattedPrice = new Intl.NumberFormat(locale, {
+	let formattedPrice = new Intl.NumberFormat(locale, {
 		style: 'currency',
 		currency,
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2,
 	}).format(price);
+
+	// Заміняємо коми на крапки
+	formattedPrice = formattedPrice.replace(/,/g, '.');
 
 	const currencySymbol = new Intl.NumberFormat(locale, {
 		style: 'currency',

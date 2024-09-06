@@ -20,7 +20,7 @@ export default function CamperCard({ camper }) {
 	const modalStyles = {
 		content: {
 			width: '982px',
-			height: '720px',
+			height: 'auto',
 		},
 	};
 	const titleImage = camper.gallery?.[0];

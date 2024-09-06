@@ -26,10 +26,10 @@ export default function CustomModal({
 			contentLabel={title}
 		>
 			<button onClick={onRequestClose} className={css.closeButton}>
-				<Icon className={css.iClose} id="i-close" width={16} height={16} />
+				<Icon className={css.iClose} id="i-close" width={18} height={18} />
 			</button>
 			<h1 style={{ display: 'none' }}>{title}</h1>
-			<div>{Component && <Component {...componentProps} />}</div>
+			{Component && <Component {...componentProps} />}
 		</Modal>
 	);
 }

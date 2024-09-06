@@ -1,33 +1,37 @@
-.buttonWrapper {
+.tab_container {
 	display: flex;
-	justify-content: space-around;
-	margin-bottom: 20px;
+	gap: 40px;
+	margin-top: 44px;
+	border-bottom: 2px solid rgba(16, 24, 40, 0.2);
 }
 
-.buttonAddInfo {
-	padding: 10px 20px;
-	background-color: #f0f0f0;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+.tabs {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
+	transition: color var(--transition);
+	color: var(--main-text-color);
+	border-bottom: 2px solid transparent;
+	padding-bottom: 24px;
 }
 
-.buttonAddInfo:hover {
-	background-color: #e0e0e0;
+.tabs:hover {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	color: var(--accent-hover-color);
 }
 
 .activeTab {
-	padding: 10px 20px;
-	background-color: #007bff;
-	color: white;
-	border: 1px solid #007bff;
-	border-radius: 4px;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	/* color: var(--accent-color); */
 	cursor: pointer;
-}
-
-.activeTab:hover {
-	background-color: #0056b3;
+	padding-bottom: 24px;
+	margin-bottom: -2px;
+	border-bottom: 3px solid var(--accent-color);
 }
 
 .activeContainer {
@@ -50,6 +54,7 @@
 	gap: 16px;
 	width: 902px;
 	height: 310px;
+	margin-top: 24px;
 }
 
 .galleryItem {
@@ -68,4 +73,47 @@
 	height: 150%;
 	border-radius: 8px;
 	object-fit: cover;
+}
+
+.price {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	margin-top: 16px;
+}
+
+.description {
+	margin-top: 24px;
+	color: var(--second-text-color);
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.content {
+	max-height: 720px; /* Пример высоты, можно изменить */
+	overflow-y: auto; /* Скролл по вертикали */
+	margin-right: -16px;
+	padding-right: 16px;
+	overflow-x: hidden;
+}
+
+/* Стили для скроллбара внутри модалки */
+.content::-webkit-scrollbar {
+	width: 8px;
+}
+
+.content::-webkit-scrollbar-thumb {
+	background-color: #d9d9d9; /* Цвет бегунка */
+	border-radius: 10px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+	background-color: var(
+		--scrollbar-thumb-hover-color
+	); /* Цвет бегунка при наведении */
+}
+
+.content::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-track-color); /* Цвет трека */
+	border-radius: 10px;
 }

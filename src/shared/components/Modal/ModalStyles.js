@@ -9,6 +9,7 @@ export const baseStyles = {
 		outline: 'transparent',
 		position: 'relative',
 		boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+		overflow: 'auto',
 	},
 
 	overlay: {
