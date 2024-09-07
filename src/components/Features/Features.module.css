@@ -2,8 +2,8 @@
 	display: flex;
 	flex-flow: wrap;
 	gap: 8px;
-	width: 526px;
 }
+
 .featureItem {
 	display: flex;
 	align-items: center;
@@ -12,11 +12,13 @@
 	padding: 12px 18px;
 	height: 44px;
 	background-color: rgb(242, 244, 247);
+	transition: color var(--transition);
 }
 
 .icon {
 	stroke: var(--main-text-color);
 	fill: none;
+	transition: stroke var(--transition);
 }
 
 .adultsIcon,
@@ -25,6 +27,7 @@
 .toilet {
 	fill: var(--main-text-color);
 	stroke: none;
+	transition: fill var(--transition);
 }
 
 .label {
@@ -32,4 +35,20 @@
 	font-size: 16px;
 	line-height: 1.25;
 	color: var(--main-text-color);
+	transition: color var(--transition);
+}
+
+.featureItem:hover .icon {
+	stroke: var(--accent-color);
+}
+
+.featureItem:hover .adultsIcon,
+.featureItem:hover .petrol,
+.featureItem:hover .gas,
+.featureItem:hover .toilet {
+	fill: var(--accent-color);
+}
+
+.featureItem:hover .label {
+	color: var(--accent-color);
 }

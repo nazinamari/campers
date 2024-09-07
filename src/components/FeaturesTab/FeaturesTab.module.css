@@ -3,3 +3,8 @@
 	display: flex;
 	gap: 24px;
 }
+
+.left,
+.right {
+	flex: 1;
+}

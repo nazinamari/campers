@@ -93,7 +93,7 @@
 	max-height: 720px; /* Пример высоты, можно изменить */
 	overflow-y: auto; /* Скролл по вертикали */
 	margin-right: -16px;
-	padding-right: 16px;
+	padding-right: 8px;
 	overflow-x: hidden;
 }
 

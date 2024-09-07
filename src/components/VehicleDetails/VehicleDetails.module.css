@@ -1,0 +1,43 @@
+.vehicle_details {
+	margin-top: 44px;
+}
+
+.titile {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	border-bottom: 1px solid rgba(16, 24, 40, 0.1); /* Лінія під заголовком */
+	padding-bottom: 24px; /* Відступ між заголовком і лінією */
+}
+
+.vehicle_table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 24px;
+}
+
+.vehicle_table th {
+	text-align: left;
+	width: 30%;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 0px;
+}
+
+.vehicle_table td {
+	text-align: right;
+	padding: 0px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.vehicle_table tr:not(:last-child) th,
+.vehicle_table tr:not(:last-child) td {
+	padding-bottom: 14px;
+}
+
+.vehicle_table tr:hover {
+	color: var(--accent-hover-color);
+}
