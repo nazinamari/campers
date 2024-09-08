@@ -1,9 +1,9 @@
 import css from './VehicleDetails.module.css';
 
 export default function VehicleDetails({ data }) {
-	// const camper = () => console.log(data);
+	const camper = () => console.log(data);
 
-	// camper();
+	camper();
 
 	return (
 		<section className={css.vehicle_details}>
@@ -12,27 +12,39 @@ export default function VehicleDetails({ data }) {
 				<tbody>
 					<tr>
 						<th>Form</th>
-						<td>Panel truck</td>
+						<td>{data.form}</td>
 					</tr>
 					<tr>
 						<th>Length</th>
-						<td>5.4 m</td>
+						<td>
+							<span>{data.length.slice(0, -1)}</span>
+							<span className={css.td_span}> {data.length.slice(-1)}</span>
+						</td>
 					</tr>
 					<tr>
 						<th>Width</th>
-						<td>2.01 m</td>
+						<td>
+							<span>{data.width.slice(0, -1)}</span>
+							<span className={css.td_span}> {data.width.slice(-1)}</span>
+						</td>
 					</tr>
 					<tr>
 						<th>Height</th>
-						<td>2.05 m</td>
+						<td>
+							<span>{data.height.slice(0, -1)}</span>
+							<span className={css.td_span}> {data.height.slice(-1)}</span>
+						</td>
 					</tr>
 					<tr>
 						<th>Tank</th>
-						<td>132 l</td>
+						<td>
+							<span>{data.tank.slice(0, -1)}</span>
+							<span className={css.td_span}> {data.tank.slice(-1)}</span>
+						</td>
 					</tr>
 					<tr>
 						<th>Consumption</th>
-						<td>12.4 l/100km</td>
+						<td>{data.consumption}</td>
 					</tr>
 				</tbody>
 			</table>

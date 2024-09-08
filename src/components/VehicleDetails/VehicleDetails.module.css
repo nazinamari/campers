@@ -41,3 +41,11 @@
 .vehicle_table tr:hover {
 	color: var(--accent-hover-color);
 }
+
+td {
+	text-transform: capitalize;
+}
+
+.td_span {
+	text-transform: none;
+}
