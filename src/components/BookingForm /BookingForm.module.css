@@ -1,5 +1,8 @@
-.btnSend {
-	padding: 16px 60px;
+.booking_container {
+	border: 1px solid rgba(16, 24, 40, 0.2);
+	border-radius: 10px;
+	padding: 24px;
+	height: 100%;
 }
 
 .title {
@@ -9,6 +12,55 @@
 }
 
 .description {
+	margin-top: 8px;
 	font-size: 16px;
+	line-height: 24px;
 	color: var (--secont-text-color);
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 24px;
+}
+
+.btnSend {
+	padding: 16px 60px;
+	margin-top: 10px;
+	width: 160px;
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 18px;
+	/* border: 1px solid #e0e0e0; */
+	border-radius: 10px; /* Заокруглені кути для полів */
+	font-size: 16px;
+	line-height: 20px;
+	background-color: rgba(247, 247, 247, 1);
+	outline: none;
+	border: none;
+	/* transition: border-color var(--transition); */
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	border: 1px solid var(--second-text-color);
+	background-color: #fff;
+}
+
+textarea {
+	resize: none; /* Дозволяє змінювати розмір текстового поля тільки по вертикалі */
+	height: 114px; /* Висота для поля коментаря */
+}
+
+.error_message {
+	color: #ff4d4f;
+	font-size: 14px;
+	margin-top: -10px;
 }
