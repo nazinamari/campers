@@ -5,11 +5,11 @@ import { selectFormValues } from '../../redux/form/selectors';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import FeedbackSchema from './validationSchema';
 import { setFormValues } from '../../redux/form/slice';
+import Icon from '../../shared/Icon/Icon';
 
 export default function BookingForm() {
 	const dispatch = useDispatch();
 	const formValues = useSelector(selectFormValues);
-	console.log(formValues);
 
 	return (
 		<section className={css.booking_container}>
@@ -40,7 +40,15 @@ export default function BookingForm() {
 						className={css.error_message}
 					/>
 
-					<Field placeholder="Booking date" type="text" name="date" />
+					<div className={css.dateContainer}>
+						<Field
+							placeholder="Booking date"
+							type="text"
+							name="date"
+							className={css.dateField}
+						/>
+						<Icon className={css.icon} id="i-booking" width="16" height="16" />
+					</div>
 					<ErrorMessage
 						name="date"
 						component="span"

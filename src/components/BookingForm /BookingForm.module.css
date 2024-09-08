@@ -37,14 +37,13 @@ input,
 textarea {
 	width: 100%;
 	padding: 18px;
-	/* border: 1px solid #e0e0e0; */
-	border-radius: 10px; /* Заокруглені кути для полів */
+	border-radius: 10px;
 	font-size: 16px;
 	line-height: 20px;
 	background-color: rgba(247, 247, 247, 1);
 	outline: none;
 	border: none;
-	/* transition: border-color var(--transition); */
+	transition: border-color var(--transition);
 }
 
 input:focus,
@@ -55,12 +54,30 @@ textarea:focus {
 }
 
 textarea {
-	resize: none; /* Дозволяє змінювати розмір текстового поля тільки по вертикалі */
-	height: 114px; /* Висота для поля коментаря */
+	resize: none;
+	height: 114px;
 }
 
 .error_message {
 	color: #ff4d4f;
 	font-size: 14px;
 	margin-top: -10px;
+}
+
+.dateContainer {
+	position: relative;
+}
+
+.dateField {
+	padding-right: 30px; /* Достатньо простору для іконки */
+}
+
+.icon {
+	position: absolute;
+	right: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	stroke: var(--main-text-color);
+	fill: none;
 }

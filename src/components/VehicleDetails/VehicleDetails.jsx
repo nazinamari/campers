@@ -1,10 +1,6 @@
 import css from './VehicleDetails.module.css';
 
 export default function VehicleDetails({ data }) {
-	const camper = () => console.log(data);
-
-	camper();
-
 	return (
 		<section className={css.vehicle_details}>
 			<h3 className={css.titile}>Vehicle details</h3>

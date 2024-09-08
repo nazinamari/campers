@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import css from './CamperModal.module.css';
-import Reviews from '../Reviews/Reviews';
 import List from '../../shared/components/List/List';
 import CamperInfo from '../CamperInfo/CamperInfo';
 import { formatPrice } from '../../shared/utils/formatPrice';
 import FeaturesTab from '../FeaturesTab/FeaturesTab';
+import ReviewsTab from '../ReviewsTab/ReviewsTab';
 
 export default function CamperModal({ data, initialTab = 'Features' }) {
 	const [activeTab, setActiveTab] = useState(initialTab);
@@ -78,12 +78,12 @@ export default function CamperModal({ data, initialTab = 'Features' }) {
 				>
 					<FeaturesTab data={data} />
 				</div>
+
 				<div
 					ref={reviewsRef}
 					className={activeTab === 'Reviews' ? css.activeContainer : css.hidden}
 				>
-					<p>Reviews content goes here...</p>
-					<Reviews data={data} />
+					<ReviewsTab data={data} />
 				</div>
 			</div>
 		</>
