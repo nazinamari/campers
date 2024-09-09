@@ -1,5 +1,9 @@
 [
-	{ "label": "Van", "iconId": "i-camper" },
-	{ "label": "Fully Integrated", "iconId": "i-camper2" },
-	{ "label": "Alcove", "iconId": "i-camper3" }
+	{ "label": "Van", "iconId": "i-camper", "value": "panelTruck" },
+	{
+		"label": "Fully Integrated",
+		"iconId": "i-camper2",
+		"value": "fullyIntegrated"
+	},
+	{ "label": "Alcove", "iconId": "i-camper3", "value": "alcove" }
 ]

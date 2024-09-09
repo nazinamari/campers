@@ -27,9 +27,9 @@ export default function VehicleTypeFilter({ currentType, onTypeChange }) {
 					key={type.label}
 					className={clsx(
 						css.filterOption,
-						selectedOptions.includes(type.label) && css.checked
+						selectedOptions.includes(type.value) && css.checked
 					)}
-					onClick={() => handleOptionClick(type.label)}
+					onClick={() => handleOptionClick(type.value)}
 				>
 					<div className={css.info}>
 						<Icon
