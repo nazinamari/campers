@@ -4,7 +4,14 @@ import css from './Features.module.css';
 import allFeaturesData from './data/features.json';
 
 export default function Features({ data, maxVisible }) {
-	const directAccessKeys = ['adults', 'beds', 'engine', 'children'];
+	const directAccessKeys = [
+		'adults',
+		'beds',
+		'engine',
+		'children',
+		'transmission',
+		'form',
+	];
 
 	const allFeatures = allFeaturesData.map((feature) => {
 		const value = directAccessKeys.includes(feature.key)
