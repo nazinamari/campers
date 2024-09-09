@@ -1,6 +1,17 @@
 import css from './VehicleDetails.module.css';
 
 export default function VehicleDetails({ data }) {
+	function formatFormValue(value) {
+		switch (value) {
+			case 'panelTruck':
+				return 'Panel truck';
+			case 'fullyIntegrated':
+				return 'Fully integrated';
+			default:
+				return value;
+		}
+	}
+
 	return (
 		<section className={css.vehicle_details}>
 			<h3 className={css.titile}>Vehicle details</h3>
@@ -8,7 +19,7 @@ export default function VehicleDetails({ data }) {
 				<tbody>
 					<tr>
 						<th>Form</th>
-						<td>{data.form}</td>
+						<td>{formatFormValue(data.form)}</td>{' '}
 					</tr>
 					<tr>
 						<th>Length</th>

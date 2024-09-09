@@ -54,7 +54,7 @@ export default function CamperCard({ camper }) {
 						onRequestClose={handleClose}
 						title="All Features"
 						component={CamperDetailsModal}
-						componentProps={{ data: camper, initialTab }}
+						componentProps={{ data: camper, initialTab: 'Features' }}
 						additionalStyles={modalStyles}
 					/>
 				</div>

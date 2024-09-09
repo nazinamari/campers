@@ -13,9 +13,8 @@ export default function CamperModal({ data, initialTab = 'Features' }) {
 
 	// Виконується після першого рендеру компонента або коли змінюється initialTab.
 	useEffect(() => {
-		if (activeTab === 'Features' && featuresRef.current) {
-			featuresRef.current.scrollIntoView({ behavior: 'smooth' });
-		} else if (activeTab === 'Reviews' && reviewsRef.current) {
+		// Прокручуємо вниз тільки якщо активна вкладка "Reviews".
+		if (activeTab === 'Reviews' && reviewsRef.current) {
 			reviewsRef.current.scrollIntoView({ behavior: 'smooth' });
 		}
 	}, [activeTab]); // Залежність від activeTab
