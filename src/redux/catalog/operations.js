@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import { instance } from '../../axios/api';
-import { selectFilter } from '../filter/selectors';
 
 export const PAGE_LIMIT = 4;
 
@@ -15,7 +14,7 @@ export const fetchCampers = createAsyncThunk(
 			const response = await instance.get('/campers', {
 				params: {
 					page: currentPage + 1, // Наступна сторінка
-					limit: PAGE_LIMIT, // Кількість оголошень на сторінці
+					limit: PAGE_LIMIT,
 				},
 			});
 			return response.data;
@@ -30,73 +29,36 @@ export const fetchFilteredCampers = createAsyncThunk(
 	'catalog/fetchFiltered',
 	async (_, thunkAPI) => {
 		try {
-			const state = thunkAPI.getState();
-			const filters = selectFilter(state);
-			const currentPage = state.catalog.page;
+			const { filters } = thunkAPI.getState();
 
-			// Ініціалізація параметрів запиту
-			const params = {
-				page: currentPage + 1,
-				limit: PAGE_LIMIT,
-			};
+			const { data } = await instance.get('/campers');
 
-			// Обробка фільтрів
-			if (filters.location) {
-				params.location = filters.location.toLowerCase(); // Зменшення до нижнього регістру
-			}
+			let result = [];
+
 			if (filters.equipment.length > 0) {
-				params.equipment = filters.equipment
-					.map((eq) => eq.toLowerCase())
-					.join(','); // Форматування для запиту
-			}
-			if (filters.type.length > 0) {
-				params.type = filters.type.toLowerCase(); // Зменшення до нижнього регістру
-			}
-
-			// Обробка details
-			if (filters.details) {
-				Object.keys(filters.details).forEach((detailKey) => {
-					const detailValue = filters.details[detailKey];
-					if (detailValue) {
-						params[`details_${detailKey}`] = detailValue.toLowerCase();
-					}
-				});
-			}
-
-			// Запит до API
-			const response = await instance.get('/campers', { params });
-
-			// Витягування даних з відповіді
-			let filteredCampers = response.data;
-
-			// Фільтрація даних після отримання відповіді (якщо необхідно)
-			if (filters.equipment.length > 0) {
-				filteredCampers = filteredCampers.filter(
+				result = data.filter(
 					(item) =>
-						item.details &&
-						filters.equipment.some(
-							(eq) => item.details[eq] || item.details[eq] === undefined
-						)
+						(filters.equipment.includes('transmission') && item.transmission) ||
+						(filters.equipment.includes('airConditioner') &&
+							item.details.airConditioner >= 1) ||
+						(filters.equipment.includes('shower') &&
+							item.details.shower >= 1) ||
+						(filters.equipment.includes('kitchen') &&
+							item.details.kitchen >= 1) ||
+						(filters.equipment.includes('TV') && item.details.TV >= 1)
 				);
 			}
 
-			if (filters.type) {
-				filteredCampers = filteredCampers.filter(
-					(item) => item.form === filters.type
-				);
-			}
+			// if (filters.type.length > 0) {
+			// result = data.filter(
+			// 	(item) =>
+			// )}
 
-			const [countryFilter, cityFilter] = filters.location
-				? filters.location.toLowerCase().split(', ')
-				: [null, null];
-
-			const result = filteredCampers.filter((item) => {
-				const [country, city] = item.location.toLowerCase().split(', ');
-				return (
-					(!cityFilter || city.includes(cityFilter)) &&
-					(!countryFilter || country.includes(countryFilter))
-				);
+			result = result.filter((item) => {
+				return item.location.includes(filters.location);
 			});
+
+			console.log(result);
 
 			return result;
 		} catch (error) {

@@ -23,10 +23,6 @@ export default function EquipmentFilter({
 		onEquipmentChange(newSelection);
 	};
 
-	// useEffect(() => {
-	// 	console.log(selectedOptions);
-	// }, [selectedOptions]);
-
 	return (
 		<div className={css.equipmentFilter}>
 			{equipmentOptions.map((option) => (
@@ -34,9 +30,9 @@ export default function EquipmentFilter({
 					key={option.label}
 					className={clsx(
 						css.filterOption,
-						selectedOptions.includes(option.label) && css.checked
+						selectedOptions.includes(option.value) && css.checked
 					)}
-					onClick={() => handleOptionClick(option.label)}
+					onClick={() => handleOptionClick(option.value)}
 				>
 					<div className={css.info}>
 						<Icon

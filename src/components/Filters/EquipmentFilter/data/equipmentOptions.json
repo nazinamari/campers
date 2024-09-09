@@ -1,7 +1,12 @@
 [
-	{ "label": "AC", "iconId": "AC", "className": "icon_ac" },
-	{ "label": "Automatic", "iconId": "i-automatic2" },
-	{ "label": "Kitchen", "iconId": "i-kitchen" },
-	{ "label": "TV", "iconId": "i-tv" },
-	{ "label": "Shower/WC", "iconId": "i-shower" }
+	{
+		"label": "AC",
+		"iconId": "AC",
+		"className": "icon_ac",
+		"value": "airConditioner"
+	},
+	{ "label": "Automatic", "iconId": "i-automatic2", "value": "transmission" },
+	{ "label": "Kitchen", "iconId": "i-kitchen", "value": "kitchen" },
+	{ "label": "TV", "iconId": "i-tv", "value": "TV" },
+	{ "label": "Shower/WC", "iconId": "i-shower", "value": "shower" }
 ]

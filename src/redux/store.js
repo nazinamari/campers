@@ -8,7 +8,7 @@ export const store = configureStore({
 	reducer: {
 		catalog: catalogReducer,
 		favorites: favoritesReducer,
-		filter: filterReducer,
+		filters: filterReducer,
 		form: formReducer,
 	},
 });
