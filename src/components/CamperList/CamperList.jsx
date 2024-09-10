@@ -15,16 +15,18 @@ export default function CamperList() {
 	}, [dispatch]);
 
 	return (
-		<List className={css.camperList}>
-			{allCampers.length > 0 ? (
-				allCampers.map((camper) => (
-					<li key={camper._id}>
-						<CamperCard camper={camper} />
-					</li>
-				))
-			) : (
-				<li className={css.notfound}>No campers found</li>
-			)}
-		</List>
+		<section>
+			<List className={css.camperList}>
+				{allCampers.length > 0 ? (
+					allCampers.map((camper) => (
+						<li key={camper._id}>
+							<CamperCard camper={camper} />
+						</li>
+					))
+				) : (
+					<li className={css.notfound}>No campers found</li>
+				)}
+			</List>
+		</section>
 	);
 }

@@ -14,7 +14,7 @@ export default function Review({ reviewer_name, reviewer_rating, comment }) {
 	};
 
 	return (
-		<div className="review">
+		<section>
 			<div className={css.review_header}>
 				<div className={css.avatar}>
 					<p className={css.avatar_letter}>{reviewer_name.charAt(0)}</p>
@@ -35,6 +35,6 @@ export default function Review({ reviewer_name, reviewer_rating, comment }) {
 				</div>
 			</div>
 			<p className={css.comment}>{comment}</p>
-		</div>
+		</section>
 	);
 }

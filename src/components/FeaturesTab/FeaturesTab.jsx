@@ -5,7 +5,7 @@ import css from './FeaturesTab.module.css';
 
 export default function FeaturesTab({ data }) {
 	return (
-		<div className={css.tab_container}>
+		<section className={css.tab_container}>
 			<div className={css.left}>
 				<Features data={data} />
 				<VehicleDetails data={data} />
@@ -13,6 +13,6 @@ export default function FeaturesTab({ data }) {
 			<div className={css.right}>
 				<BookingForm />
 			</div>
-		</div>
+		</section>
 	);
 }

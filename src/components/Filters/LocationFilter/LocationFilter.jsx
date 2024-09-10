@@ -63,7 +63,7 @@ export default function LocationFilter({ currentLocation, onLocationChange }) {
 	};
 
 	return (
-		<div className={css.locationFilter} ref={dropdownRef}>
+		<section className={css.locationFilter} ref={dropdownRef}>
 			<label htmlFor="location">Location</label>
 			<input
 				id="location"
@@ -94,6 +94,6 @@ export default function LocationFilter({ currentLocation, onLocationChange }) {
 				width="16"
 				height="16"
 			/>
-		</div>
+		</section>
 	);
 }

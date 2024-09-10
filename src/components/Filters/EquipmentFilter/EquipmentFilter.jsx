@@ -24,7 +24,7 @@ export default function EquipmentFilter({
 	};
 
 	return (
-		<div className={css.equipmentFilter}>
+		<section className={css.equipmentFilter}>
 			{equipmentOptions.map((option) => (
 				<div
 					key={option.label}
@@ -45,6 +45,6 @@ export default function EquipmentFilter({
 					</div>
 				</div>
 			))}
-		</div>
+		</section>
 	);
 }

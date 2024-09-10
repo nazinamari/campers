@@ -6,7 +6,7 @@ export default function ReviewsTab({ data }) {
 	const reviews = data.reviews;
 
 	return (
-		<div className={css.tab_container}>
+		<section className={css.tab_container}>
 			<div className={css.left}>
 				<div className={css.reviews}>
 					{reviews.map((review, index) => (
@@ -22,6 +22,6 @@ export default function ReviewsTab({ data }) {
 			<div className={css.right}>
 				<BookingForm />
 			</div>
-		</div>
+		</section>
 	);
 }

@@ -21,7 +21,7 @@ export default function VehicleTypeFilter({ currentType, onTypeChange }) {
 	};
 
 	return (
-		<div className={css.vehicleTypeFilter}>
+		<section className={css.vehicleTypeFilter}>
 			{vehicleTypes.map((type) => (
 				<div
 					key={type.label}
@@ -42,6 +42,6 @@ export default function VehicleTypeFilter({ currentType, onTypeChange }) {
 					</div>
 				</div>
 			))}
-		</div>
+		</section>
 	);
 }

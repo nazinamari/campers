@@ -44,18 +44,20 @@ export default function Features({ data, maxVisible }) {
 		: availableFeatures;
 
 	return (
-		<List className={css.features}>
-			{visibleFeatures.map((feature) => (
-				<div key={feature.key} className={css.featureItem}>
-					<Icon
-						className={`${css.icon} ${css[feature.className] || ''}`}
-						id={feature.iconId}
-						width="20"
-						height="20"
-					/>
-					<span className={css.label}>{feature.label}</span>
-				</div>
-			))}
-		</List>
+		<section>
+			<List className={css.features}>
+				{visibleFeatures.map((feature) => (
+					<div key={feature.key} className={css.featureItem}>
+						<Icon
+							className={`${css.icon} ${css[feature.className] || ''}`}
+							id={feature.iconId}
+							width="20"
+							height="20"
+						/>
+						<span className={css.label}>{feature.label}</span>
+					</div>
+				))}
+			</List>
+		</section>
 	);
 }

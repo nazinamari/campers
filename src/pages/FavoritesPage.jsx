@@ -1,3 +1,7 @@
 export default function FavoritesPage() {
-	return <h1>FavPage</h1>;
+	return (
+		<section>
+			<h1>Favourite Campers</h1>
+		</section>
+	);
 }

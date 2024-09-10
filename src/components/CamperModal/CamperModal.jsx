@@ -31,7 +31,7 @@ export default function CamperModal({ data, initialTab = 'Features' }) {
 	};
 
 	return (
-		<>
+		<section>
 			<h2 className={css.camperTitle}>{data.name}</h2>
 			<CamperInfo camper={data} onTabChange={handleTabChange} />
 			<p className={css.price}>{formatPrice(data.price)}</p>
@@ -85,6 +85,6 @@ export default function CamperModal({ data, initialTab = 'Features' }) {
 					<ReviewsTab data={data} />
 				</div>
 			</div>
-		</>
+		</section>
 	);
 }
