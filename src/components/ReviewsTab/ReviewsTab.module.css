@@ -8,3 +8,9 @@
 .right {
 	flex: 1;
 }
+
+.reviews {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}

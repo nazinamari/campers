@@ -1,0 +1,44 @@
+.review_header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 16px;
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+	background-color: var(--button-color);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.avatar_letter {
+	color: var(--accent-color);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.customer_name {
+	color: var(--main-text-color);
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.i_star {
+	fill: var(--button-color);
+}
+
+.i_star_rate {
+	fill: var(--second-accent-color);
+}
+
+.comment {
+	margin-top: 16px;
+	font-size: 16px;
+	color: var(--second-text-color);
+}

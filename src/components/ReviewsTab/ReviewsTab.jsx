@@ -8,7 +8,7 @@ export default function ReviewsTab({ data }) {
 	return (
 		<div className={css.tab_container}>
 			<div className={css.left}>
-				<div className="app">
+				<div className={css.reviews}>
 					{reviews.map((review, index) => (
 						<Review
 							key={index}
