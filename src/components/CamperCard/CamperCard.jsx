@@ -11,10 +11,11 @@ export default function CamperCard({ camper }) {
 	const [open, setOpen] = useState(false);
 	const [initialTab, setInitialTab] = useState('Features');
 
-	const handleOpen = (tab) => {
+	const handleOpen = (tab = 'Features') => {
 		setInitialTab(tab);
 		setOpen(true);
 	};
+
 	const handleClose = () => setOpen(false);
 
 	const modalStyles = {
@@ -46,7 +47,10 @@ export default function CamperCard({ camper }) {
 						<Features data={camper} maxVisible={6} />
 					</div>
 
-					<Button className={css.showAllButton} onClick={handleOpen}>
+					<Button
+						className={css.showAllButton}
+						onClick={() => handleOpen('Features')}
+					>
 						Show more
 					</Button>
 					<CustomModal
@@ -54,7 +58,7 @@ export default function CamperCard({ camper }) {
 						onRequestClose={handleClose}
 						title="All Features"
 						component={CamperDetailsModal}
-						componentProps={{ data: camper, initialTab: 'Features' }}
+						componentProps={{ data: camper, initialTab }}
 						additionalStyles={modalStyles}
 					/>
 				</div>

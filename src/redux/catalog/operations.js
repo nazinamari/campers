@@ -33,32 +33,35 @@ export const fetchFilteredCampers = createAsyncThunk(
 
 			const { data } = await instance.get('/campers');
 
-			const allowedForms = ['panelTruck', 'alcove', 'fullyIntegrated'];
+			let result = [];
 
-			const result = data.filter((item) => {
-				// Перевірка на обладнання
-				const equipmentMatch =
-					filters.equipment.length === 0 || // Якщо фільтрів по обладнанню немає, пропускаємо
-					(filters.equipment.includes('transmission') && item.transmission) ||
-					(filters.equipment.includes('airConditioner') &&
-						item.details.airConditioner >= 1) ||
-					(filters.equipment.includes('shower') && item.details.shower >= 1) ||
-					(filters.equipment.includes('kitchen') &&
-						item.details.kitchen >= 1) ||
-					(filters.equipment.includes('TV') && item.details.TV >= 1);
+			if (filters.equipment.length > 0) {
+				result = data.filter(
+					(item) =>
+						(filters.equipment.includes('transmission') && item.transmission) ||
+						(filters.equipment.includes('airConditioner') &&
+							item.details.airConditioner >= 1) ||
+						(filters.equipment.includes('shower') &&
+							item.details.shower >= 1) ||
+						(filters.equipment.includes('kitchen') &&
+							item.details.kitchen >= 1) ||
+						(filters.equipment.includes('TV') && item.details.TV >= 1)
+				);
+			}
 
-				// Перевірка на тип
-				const typeMatch =
-					filters.type.length === 0 || // Якщо фільтрів по типу немає, пропускаємо
-					(allowedForms.includes(item.form) &&
-						filters.type.includes(item.form)); // Перевіряємо, чи form є в списку allowedForms і в фільтрах
+			if (filters.type.length > 0) {
+				result = data.filter(
+					(item) =>
+						(filters.type.includes('panelTruck') &&
+							item.form === 'panelTruck') ||
+						(filters.type.includes('alcove') && item.form === 'alcove') ||
+						(filters.type.includes('fullyIntegrated') &&
+							item.form === 'fullyIntegrated')
+				);
+			}
 
-				// Перевірка на локацію
-				const locationMatch =
-					!filters.location || item.location.includes(filters.location);
-
-				// Повертаємо true, якщо всі умови виконані
-				return equipmentMatch && typeMatch && locationMatch;
+			result = result.filter((item) => {
+				return item.location.includes(filters.location);
 			});
 
 			console.log(result);
