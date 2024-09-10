@@ -23,7 +23,7 @@ export default function CamperList() {
 					</li>
 				))
 			) : (
-				<li>No campers found</li>
+				<li className={css.notfound}>No campers found</li>
 			)}
 		</List>
 	);

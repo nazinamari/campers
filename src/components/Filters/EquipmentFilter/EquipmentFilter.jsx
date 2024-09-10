@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import css from './EquipmentFilter.module.css';
 import equipmentOptions from './data/equipmentOptions.json';
-import Icon from '../../../shared/Icon/Icon';
 import { useState, useEffect } from 'react';
+import Icon from '../../../shared/components/Icon/Icon';
 
 export default function EquipmentFilter({
 	currentEquipment,

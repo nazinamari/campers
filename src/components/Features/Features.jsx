@@ -1,5 +1,5 @@
 import List from '../../shared/components/List/List';
-import Icon from '../../shared/Icon/Icon';
+import Icon from '../../shared/components/Icon/Icon';
 import css from './Features.module.css';
 import allFeaturesData from './data/features.json';
 

@@ -3,3 +3,11 @@
 	flex-wrap: wrap;
 	gap: 32px;
 }
+
+.notfound {
+	width: 888px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	text-align: center;
+}

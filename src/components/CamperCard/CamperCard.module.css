@@ -38,6 +38,29 @@
 	line-height: 30px;
 }
 
+.header_left {
+	display: flex;
+	gap: 11px;
+	justify-content: center;
+	align-items: center;
+}
+
+.i_heart {
+	fill: none;
+	stroke: var(--main-text-color);
+}
+
+.i_heart:hover,
+.i_heart:focus {
+	fill: var(--accent-color);
+	stroke: var(--accent-color);
+}
+
+.heartIsActive {
+	fill: var(--accent-color);
+	stroke: var(--accent-color);
+}
+
 .price {
 	font-size: 24px;
 	font-weight: 600;

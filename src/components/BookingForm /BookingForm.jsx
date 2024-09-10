@@ -5,7 +5,7 @@ import { selectFormValues } from '../../redux/form/selectors';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import FeedbackSchema from './validationSchema';
 import { setFormValues } from '../../redux/form/slice';
-import Icon from '../../shared/Icon/Icon';
+import Icon from '../../shared/components/Icon/Icon';
 
 export default function BookingForm() {
 	const dispatch = useDispatch();

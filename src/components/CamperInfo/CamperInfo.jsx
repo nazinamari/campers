@@ -1,4 +1,4 @@
-import Icon from '../../shared/Icon/Icon';
+import Icon from '../../shared/components/Icon/Icon';
 import css from './CamperInfo.module.css';
 
 export default function CamperInfo({ camper, onTabChange }) {

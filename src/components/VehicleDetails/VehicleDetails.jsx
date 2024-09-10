@@ -19,7 +19,7 @@ export default function VehicleDetails({ data }) {
 				<tbody>
 					<tr>
 						<th>Form</th>
-						<td>{formatFormValue(data.form)}</td>{' '}
+						<td>{formatFormValue(data.form)}</td>
 					</tr>
 					<tr>
 						<th>Length</th>

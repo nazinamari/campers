@@ -1,5 +1,5 @@
+import Icon from '../../../shared/components/Icon/Icon';
 import css from './LocationFilter.module.css';
-import Icon from '../../../shared/Icon/Icon';
 import { useState, useEffect, useRef } from 'react';
 
 const locations = [

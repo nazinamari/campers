@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import css from './VehicleTypes.module.css';
-import Icon from '../../../shared/Icon/Icon';
 import { useState, useEffect } from 'react';
 import vehicleTypes from './data/vehicleTypes.json';
+import Icon from '../../../shared/components/Icon/Icon';
 
 export default function VehicleTypeFilter({ currentType, onTypeChange }) {
 	const [selectedOptions, setSelectedOptions] = useState([]);
