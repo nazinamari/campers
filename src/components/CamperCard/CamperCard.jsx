@@ -9,11 +9,14 @@ import CamperInfo from '../CamperInfo/CamperInfo';
 
 import clsx from 'clsx';
 import Icon from '../../shared/components/Icon/Icon';
+import { toggleFavourite } from '../../redux/favourites/slice';
+import { useDispatch } from 'react-redux';
 
 export default function CamperCard({ camper }) {
 	const [open, setOpen] = useState(false);
 	const [initialTab, setInitialTab] = useState('Features');
 	const [isActive, setIsActive] = useState(false);
+	const dispatch = useDispatch();
 
 	const handleOpen = (tab = 'Features') => {
 		setInitialTab(tab);
@@ -37,6 +40,7 @@ export default function CamperCard({ camper }) {
 
 	const toggleHeart = () => {
 		setIsActive((prev) => !prev);
+		dispatch(toggleFavourite(camper));
 	};
 
 	return (

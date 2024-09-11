@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { catalogReducer } from './catalog/slice';
-import { favoritesReducer } from './favorites/slice';
+import { favouritesReducer } from './favourites/slice';
 import { filterReducer } from './filter/slice';
 import { formReducer } from './form/slice';
 
 export const store = configureStore({
 	reducer: {
 		catalog: catalogReducer,
-		favorites: favoritesReducer,
+		favourites: favouritesReducer,
 		filters: filterReducer,
 		form: formReducer,
 	},
