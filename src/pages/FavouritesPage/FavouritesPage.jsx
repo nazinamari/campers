@@ -7,7 +7,6 @@ import css from './FavouritesPage.module.css';
 export default function FavouritesPage() {
 	const favourites = useSelector(selectFavourites);
 	const dispatch = useDispatch();
-	console.log(favourites);
 
 	const handleToggleFavorite = (campersData) => {
 		dispatch(removeFromFavourites(campersData._id));
