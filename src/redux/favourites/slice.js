@@ -18,6 +18,8 @@ const favouritesSlice = createSlice({
 				} else {
 					state.items.splice(index, 1);
 				}
+
+				localStorage.setItem('favourites', JSON.stringify(state.items));
 			},
 			prepare: (item) => {
 				return {
@@ -31,6 +33,8 @@ const favouritesSlice = createSlice({
 		removeFromFavourites: {
 			reducer: (state, action) => {
 				state.items = state.items.filter((fav) => fav._id !== action.payload);
+
+				localStorage.setItem('favourites', JSON.stringify(state.items));
 			},
 			prepare: (id) => {
 				return {
