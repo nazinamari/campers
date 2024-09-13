@@ -1,22 +1,55 @@
-.swiperContainer {
+.swiper_container {
 	width: 100%;
 	height: auto;
+	position: relative;
+	margin-top: 24px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-	color: #000;
-	width: 30px;
-	height: 30px;
-	background-color: rgba(
-		255,
-		255,
-		255,
-		0.8
-	); /* Фоновий колір кнопок, щоб їх було видно */
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	text-align: center;
+	width: 100%;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-	font-size: 20px;
+.wrapper img {
+	border-radius: 20px;
+	object-fit: cover;
+	width: 100%; /* Щоб зображення займало всю ширину слайду */
+	height: 100%; /* Щоб зображення займало всю висоту слайду */
+}
+
+.swiper_button_prev,
+.swiper_button_next {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.swiper_button_prev:hover,
+.swiper_button_next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ліва стрілка */
+.swiper_button_prev {
+	left: 10px;
+}
+
+/* Права стрілка */
+.swiper_button_next {
+	right: 10px;
 }

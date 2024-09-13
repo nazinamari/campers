@@ -22,7 +22,7 @@
 	font-family: 'Proxima Nova';
 	font-weight: 600;
 	font-style: normal;
-	font-size: 18px;
+	font-size: 26px;
 	line-height: 2em;
 	letter-spacing: 0.06em;
 	text-rendering: optimizeLegibility;
@@ -34,40 +34,9 @@
 	color: var(--accent-hover-color);
 }
 
-.swiper-container {
-	width: 100%; /* Займає всю ширину екрану */
-	height: auto;
-	position: relative;
-}
-
-.wrapper {
+.homePage_container {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-size: 35px;
-	background: #eee;
-	color: black;
-	height: 300px; /* Висота слайду, можеш змінити під свої потреби */
-	text-align: center;
-	width: 100%; /* Обов'язково задаємо ширину слайду */
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-	width: 44px;
-	height: 44px;
-	color: black;
-	background: rgba(0, 0, 0, 0.5);
-	border-radius: 50%;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 10;
-}
-
-.swiper-button-prev {
-	left: 10px;
-}
-
-.swiper-button-next {
-	right: 10px;
 }
