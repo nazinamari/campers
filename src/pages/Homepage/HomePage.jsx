@@ -20,7 +20,7 @@ export default function HomePage() {
 			<div className={css.homePage_container}>
 				<h1 className={css.title}>Discover the Freedom of the Open Road</h1>
 				<p className={css.description}>
-					Rent a campervan or motorhome for comfortable journeys across Ukraine.
+					Buy a campervan or motorhome for comfortable journeys across Ukraine.
 					Explore our diverse selection, catering to every budget and group
 					size.
 				</p>
