@@ -11,7 +11,10 @@ import {
 } from '../../redux/filter/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLocation, setEquipment, setType } from '../../redux/filter/slice';
-import { fetchFilteredCampers } from '../../redux/catalog/operations';
+import {
+	fetchCampers,
+	fetchFilteredCampers,
+} from '../../redux/catalog/operations';
 
 export default function Filters() {
 	const dispatch = useDispatch();
@@ -20,7 +23,11 @@ export default function Filters() {
 	const type = useSelector(selectType);
 
 	const handleSearchClick = () => {
-		dispatch(fetchFilteredCampers());
+		if (!location && !equipment.length && !type) {
+			dispatch(fetchCampers());
+		} else {
+			dispatch(fetchFilteredCampers());
+		}
 	};
 
 	return (

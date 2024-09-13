@@ -1,3 +1,7 @@
+.slideContainer {
+	display: flex;
+	justify-content: center;
+}
 .pictureWrapper {
 	width: 825px;
 	height: auto;

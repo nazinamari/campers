@@ -16,7 +16,7 @@ export default function HomePage() {
 	});
 
 	return (
-		<section>
+		<section className={css.homePage_container}>
 			<div className={css.homePage_container}>
 				<h1 className={css.title}>Discover the Freedom of the Open Road</h1>
 				<p className={css.description}>
@@ -24,6 +24,7 @@ export default function HomePage() {
 					Explore our diverse selection, catering to every budget and group
 					size.
 				</p>
+				<p className={css.logo}>Journey Made Simple</p>
 				<Link to="/catalog" className={css.link}>
 					Explore Now
 				</Link>
