@@ -17,8 +17,17 @@
 .wrapper img {
 	border-radius: 20px;
 	object-fit: cover;
-	width: 100%; /* Щоб зображення займало всю ширину слайду */
-	height: 100%; /* Щоб зображення займало всю висоту слайду */
+	width: 100%;
+	height: 100%;
+}
+
+.swiper_buttons_container {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: space-between;
 }
 
 .swiper_button_prev,
@@ -30,7 +39,6 @@
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -46,10 +54,15 @@
 
 /* Ліва стрілка */
 .swiper_button_prev {
-	left: 10px;
+	left: -100px;
 }
 
 /* Права стрілка */
 .swiper_button_next {
-	right: 10px;
+	right: -100px;
+}
+
+.icon {
+	stroke: var(--main-text-color);
+	fill: none;
 }
