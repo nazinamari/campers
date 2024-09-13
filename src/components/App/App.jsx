@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import HomePage from '../../pages/HomePage';
+import HomePage from '../../pages/Homepage/HomePage';
 import CatalogPage from '../../pages/CatalogPage/CatalogPage';
 import FavouritesPage from '../../pages/FavouritesPage/FavouritesPage';
 import SharedLayout from '../../shared/components/SharedLayout/SharedLayout';

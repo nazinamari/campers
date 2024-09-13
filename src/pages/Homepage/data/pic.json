@@ -1,0 +1,42 @@
+[
+	{
+		"id": "1",
+		"url": "pic1",
+		"alt": "camper",
+		"width": "825",
+		"height": "550",
+		"value": "1"
+	},
+	{
+		"id": "2",
+		"url": "pic2",
+		"alt": "camper",
+		"width": "825",
+		"height": "550",
+		"value": "2"
+	},
+	{
+		"id": "3",
+		"url": "pic3",
+		"alt": "camper",
+		"width": "825",
+		"height": "550",
+		"value": "3"
+	},
+	{
+		"id": "4",
+		"url": "pic4",
+		"alt": "camper",
+		"width": "825",
+		"height": "550",
+		"value": "4"
+	},
+	{
+		"id": "5",
+		"url": "pic5",
+		"alt": "camper",
+		"width": "825",
+		"height": "550",
+		"value": "5"
+	}
+]
