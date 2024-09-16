@@ -30,6 +30,7 @@ export const fetchFilteredCampers = createAsyncThunk(
 	async (_, thunkAPI) => {
 		try {
 			const { filters } = thunkAPI.getState();
+			console.log(filters);
 
 			const { data } = await instance.get('/campers');
 
@@ -47,6 +48,8 @@ export const fetchFilteredCampers = createAsyncThunk(
 							item.details.kitchen >= 1) ||
 						(filters.equipment.includes('TV') && item.details.TV >= 1)
 				);
+			} else {
+				result = data;
 			}
 
 			if (filters.type.length > 0) {
@@ -58,6 +61,8 @@ export const fetchFilteredCampers = createAsyncThunk(
 						(filters.type.includes('fullyIntegrated') &&
 							item.form === 'fullyIntegrated')
 				);
+			} else {
+				result = data;
 			}
 
 			result = result.filter((item) => {
