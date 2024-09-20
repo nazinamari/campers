@@ -16,7 +16,7 @@ export default function DateField({ selectedDate, setSelectedDate }) {
 					setFieldValue('date', date); // Оновлюємо значення поля 'date' в Formik
 				}}
 				dateFormat="dd.MM.yyyy"
-				placeholderText="Select a booking date"
+				placeholderText="Booking date"
 				className={css.dateField}
 			/>
 			<Icon className={css.icon} id="i-booking" width="16" height="16" />
