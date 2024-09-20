@@ -63,21 +63,3 @@ textarea {
 	font-size: 14px;
 	margin-top: -10px;
 }
-
-.dateContainer {
-	position: relative;
-}
-
-.dateField {
-	padding-right: 30px; /* Достатньо простору для іконки */
-}
-
-.icon {
-	position: absolute;
-	right: 14px;
-	top: 50%;
-	transform: translateY(-50%);
-	pointer-events: none;
-	stroke: var(--main-text-color);
-	fill: none;
-}

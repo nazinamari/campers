@@ -1,0 +1,18 @@
+.dateContainer {
+	position: relative;
+}
+
+.dateField {
+	padding-right: 30px;
+	width: 400px;
+}
+
+.icon {
+	position: absolute;
+	right: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	stroke: var(--main-text-color);
+	fill: none;
+}

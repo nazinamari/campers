@@ -5,11 +5,15 @@ import { selectFormValues } from '../../redux/form/selectors';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import FeedbackSchema from './validationSchema';
 import { setFormValues } from '../../redux/form/slice';
-import Icon from '../../shared/components/Icon/Icon';
+// import Icon from '../../shared/components/Icon/Icon';
+import { useState } from 'react';
+import DateField from './DateField/DateField';
+import { format } from 'date-fns';
 
 export default function BookingForm() {
 	const dispatch = useDispatch();
 	const formValues = useSelector(selectFormValues);
+	const [selectedDate, setSelectedDate] = useState(null);
 
 	return (
 		<section className={css.booking_container}>
@@ -21,6 +25,8 @@ export default function BookingForm() {
 				initialValues={formValues}
 				validationSchema={FeedbackSchema}
 				onSubmit={(values) => {
+					values.date = selectedDate ? format(selectedDate, 'yyyy-MM-dd') : '';
+					console.log(values.date);
 					dispatch(setFormValues(values));
 					console.log(values);
 				}}
@@ -39,15 +45,11 @@ export default function BookingForm() {
 						component="span"
 						className={css.error_message}
 					/>
-
 					<div className={css.dateContainer}>
-						<Field
-							placeholder="Booking date"
-							type="text"
-							name="date"
-							className={css.dateField}
+						<DateField
+							selectedDate={selectedDate}
+							setSelectedDate={setSelectedDate}
 						/>
-						<Icon className={css.icon} id="i-booking" width="16" height="16" />
 					</div>
 					<ErrorMessage
 						name="date"
