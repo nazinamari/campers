@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers, fetchFilteredCampers } from './operations';
+import { fetchCampers, fetchFilteredCampers, PAGE_LIMIT } from './operations';
 
 const initialState = {
 	items: [],
@@ -20,7 +20,17 @@ const catalogSlice = createSlice({
 			})
 			.addCase(fetchCampers.fulfilled, (state, action) => {
 				state.isLoading = false;
-				state.items = action.payload;
+
+				const newCampers = action.payload.filter(
+					(newCamper) =>
+						!state.items.some((camper) => camper._id === newCamper._id)
+				);
+				state.items = [...state.items, ...newCampers];
+				state.page += 1;
+
+				if (action.payload.length < PAGE_LIMIT) {
+					state.isLastPage = true;
+				}
 			})
 			.addCase(fetchCampers.rejected, (state, action) => {
 				state.isLoading = false;
@@ -32,6 +42,10 @@ const catalogSlice = createSlice({
 			.addCase(fetchFilteredCampers.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.items = action.payload;
+
+				if (action.payload.length < PAGE_LIMIT) {
+					state.isLastPage = true;
+				}
 			})
 			.addCase(fetchFilteredCampers.rejected, (state, action) => {
 				state.isLoading = false;

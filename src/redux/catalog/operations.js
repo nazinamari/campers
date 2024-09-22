@@ -17,6 +17,7 @@ export const fetchCampers = createAsyncThunk(
 					limit: PAGE_LIMIT,
 				},
 			});
+
 			return response.data;
 		} catch (error) {
 			toast.error('Failed to load campers.');
