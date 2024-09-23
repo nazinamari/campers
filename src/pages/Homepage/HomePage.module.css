@@ -29,6 +29,9 @@
 	text-decoration: none;
 	color: var(--accent-color);
 	margin-top: 24px;
+
+	display: flex;
+	align-items: center;
 }
 
 .link:hover {
@@ -51,4 +54,26 @@
 	letter-spacing: 0.06em;
 	text-rendering: optimizeLegibility;
 	margin-top: 24px;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.1);
+		opacity: 0.8;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+.click {
+	stroke: var(--accent-color);
+	fill: none;
+
+	animation: pulse 1.5s infinite; /* Додаємо анімацію пульсації */
+	transition: all 0.3s ease; /* Плавний перехід */
 }
