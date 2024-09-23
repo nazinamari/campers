@@ -14,6 +14,14 @@ export default function BookingForm() {
 	const formValues = useSelector(selectFormValues);
 	const [selectedDate, setSelectedDate] = useState(null);
 
+	const handleSubmit = (values, { resetForm }) => {
+		values.date = selectedDate ? format(selectedDate, 'yyyy-MM-dd') : '';
+		dispatch(setFormValues(values));
+		console.log(values);
+		resetForm();
+		setSelectedDate(null);
+	};
+
 	return (
 		<section className={css.booking_container}>
 			<h3 className={css.title}>Book your campervan now</h3>
@@ -23,12 +31,7 @@ export default function BookingForm() {
 			<Formik
 				initialValues={formValues}
 				validationSchema={FeedbackSchema}
-				onSubmit={(values) => {
-					values.date = selectedDate ? format(selectedDate, 'yyyy-MM-dd') : '';
-					console.log(values.date);
-					dispatch(setFormValues(values));
-					console.log(values);
-				}}
+				onSubmit={handleSubmit}
 			>
 				<Form className={css.form}>
 					<Field placeholder="Name" type="text" name="username" />
