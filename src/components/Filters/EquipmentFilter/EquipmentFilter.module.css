@@ -46,9 +46,9 @@
 	stroke: var(--main-text-color);
 }
 
-/* .icon_ac {
-	stroke: green;
-} */
+.icon_ac {
+	height: 25px;
+}
 
 .info {
 	display: flex;
