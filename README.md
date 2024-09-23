@@ -10,7 +10,7 @@
 
 ## Технології
 
-## Проект реалізований за допомогою:
+### Цей проект створений за допомогою **JavaScript** і використовує наступні технології:
 
 - **React**: Бібліотека для побудови користувацького інтерфейсу.
 - **Redux Toolkit**: Для управління станом.
@@ -60,7 +60,7 @@
 
 ## Technologies
 
-This project is built using:
+### This project is built using **JavaScript** and utilizes the following technologies:
 
 - **React**: A library for building user interfaces.
 - **Redux Toolkit**: For state management.
