@@ -3,3 +3,11 @@
 Цей проект має копірайт і не може бути розповсюджений у комерційних цілях без письмового дозволу автора. Ви можете використовувати, копіювати та модифікувати його, але не маєте права розповсюджувати чи продавати цей проект у комерційних цілях.
 
 Контакт для запитів: nzyame@gmail.com
+
+/* ------------------------------------------------------------------------------ */
+
+© 2024 Maryna Nazina. All rights reserved.
+
+This project is copyrighted and may not be distributed for commercial purposes without the written permission of the author. You may use, copy, and modify it, but you do not have the right to distribute or sell this project for commercial purposes.
+
+For inquiries, contact: nzyame@gmail.com

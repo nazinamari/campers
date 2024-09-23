@@ -13,15 +13,17 @@
 ## Проект реалізований за допомогою:
 
 - **React**: Бібліотека для побудови користувацького інтерфейсу.
-- **Redux**: Для управління станом.
+- **Redux Toolkit**: Для управління станом.
+- **React Router**: Для маршрутизації між різними сторінками додатку.
+- **React Modal**: Для реалізації модальних вікон у додатку.
+- **CSS Modules**: Для стилізації компонентів.
+- **clsx**: Утиліта для умовного поєднання класів CSS, що спрощує управління стилями в компонентах.
 - **Formik**: Для роботи з формами.
 - **Yup**: Для валідації форм.
-- **React Router**: Для маршрутизації між різними сторінками додатку.
 - **React DatePicker**: Для вибору дати.
-- **CSS Modules**: Для стилізації компонентів.
 - **Axios**: Для виконання HTTP-запитів.
 - **Swiper**: Для реалізації слайдеру.
-- **React Modal**: Для реалізації модальних вікон у додатку.
+- **Local Storage**: Для зберігання даних, таких як обрані кемпери, у браузері користувача навіть після перезавантаження сторінки.
 
 ### Основні функції
 
@@ -43,3 +45,53 @@
 
 - **Марина Назіна**: [nzyame@gmail.com]
 - **GitHub**: [[GitHub Maryna Nazina](https://github.com/nazinamari)]
+
+/------------------------------------------------------------------------------/
+
+# Campers App
+
+## Project Description
+
+**Campers App** is a web application for booking campers. It allows users to search for and save their favorite campers, as well as select booking dates through an intuitive interface.
+
+### Journey Made Simple
+
+![Camper](public/2.webp)
+
+## Technologies
+
+This project is built using:
+
+- **React**: A library for building user interfaces.
+- **Redux Toolkit**: For state management.
+- **React Router**: For navigation between different pages of the app.
+- **React Modal**: For implementing modal windows.
+- **CSS Modules**: For styling components.
+- **clsx**: A utility for conditionally combining CSS classes, simplifying style management.
+- **Formik**: For handling forms.
+- **Yup**: For form validation.
+- **React DatePicker**: For selecting dates.
+- **Axios**: For making HTTP requests.
+- **Swiper**: For creating sliders.
+- **Local Storage**: To store data, such as favorite campers, in the user's browser, even after page reloads.
+
+### Key Features
+
+- **Filtering**: The app allows users to filter campers by location, vehicle type, and amenities.
+- **Add to Favorites**: Users can add campers to their favorites list for easy access later.
+- **Camper Booking**: Users can fill out and submit a form to book a camper for future dates.
+- **Slider**: A visual element to showcase camper images or promotional content.
+- **Modal Window**: Provides additional information about campers without navigating to another page.
+
+## License
+
+This project is copyrighted and cannot be distributed for commercial purposes without written permission from the author. You may use, copy, and modify it, but you are not allowed to distribute or sell it for commercial purposes.
+
+For copyright details, see the [COPYRIGHT.txt](public/COPYRIGHT.txt) file.
+
+## Contact
+
+For collaboration or inquiries, feel free to contact me:
+
+- **Maryna Nazina**: [nzyame@gmail.com]
+- **GitHub**: [GitHub Maryna Nazina](https://github.com/nazinamari)
