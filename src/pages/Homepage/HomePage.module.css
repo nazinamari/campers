@@ -27,7 +27,7 @@
 	letter-spacing: 0.06em;
 	text-rendering: optimizeLegibility;
 	text-decoration: none;
-	color: var(--accent-color);
+	color: #6bb7ff;
 	margin-top: 24px;
 
 	display: flex;
@@ -35,7 +35,8 @@
 }
 
 .link:hover {
-	color: var(--accent-hover-color);
+	color: #3fa0fc;
+	stroke: var(--accent-hover-color);
 }
 
 .homePage_container {
@@ -70,10 +71,23 @@
 		opacity: 1;
 	}
 }
+
 .click {
-	stroke: var(--accent-color);
+	stroke: var(--second-accent-color);
 	fill: none;
 
-	animation: pulse 1.5s infinite; /* Додаємо анімацію пульсації */
-	transition: all 0.3s ease; /* Плавний перехід */
+	animation: pulse 1.5s infinite;
+	transition: all var(--transition);
+}
+
+.click:hover {
+	stroke: #ffb701;
+}
+
+.clickText {
+	color: var(--second-accent-color);
+}
+
+.clickText:hover {
+	color: #ffb701;
 }
