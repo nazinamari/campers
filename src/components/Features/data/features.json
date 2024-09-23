@@ -29,7 +29,8 @@
 	{
 		"key": "airConditioner",
 		"label": "AC",
-		"iconId": "i-conditioner"
+		"iconId": "i-conditioner",
+		"className": "airIcon"
 	},
 	{
 		"key": "radio",

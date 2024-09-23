@@ -1,7 +1,7 @@
 [
 	{
 		"label": "AC",
-		"iconId": "AC",
+		"iconId": "i-conditioner",
 		"className": "icon_ac",
 		"value": "airConditioner"
 	},

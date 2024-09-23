@@ -20,11 +20,13 @@ export default function HomePage() {
 		<section className={css.homePage_container}>
 			<div className={css.homePage_container}>
 				<h1 className={css.title}>Discover the Freedom of the Open Road</h1>
-				<p className={css.description}>
-					Rent a campervan for comfortable journeys across Ukraine. Explore our
-					diverse selection, catering to every budget and group size.
+				{/* <p className={css.description}>
+					Rent a campervan for comfortable journeys across Ukraine.
+				</p> */}
+				<p className={css.logo}>
+					Rent a campervan for comfortable journeys across Ukraine. Adventure
+					Made Easy
 				</p>
-				<p className={css.logo}>Journey Made Simple</p>
 				<Link to="/catalog" className={css.link}>
 					Visit our Catalog&nbsp;
 					<Icon className={css.click} id="i-click" width="50" height="50" />
