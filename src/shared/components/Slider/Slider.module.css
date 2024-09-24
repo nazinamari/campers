@@ -30,22 +30,40 @@
 	justify-content: space-between;
 }
 
-.swiper_button_prev,
-.swiper_button_next {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	position: absolute;
-	top: 50%;
-	/* background-color: var(--second-accent-color); */
-	border: 2px solid transparent;
-	transform: translateY(-50%);
-	z-index: 10;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	/* transition: background-color 0.3s; */
+@media (min-width: 320px) {
+	.swiper_button_prev,
+	.swiper_button_next {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		/* background-color: var(--second-accent-color); */
+		border: 2px solid transparent;
+		transform: translateY(-50%);
+		z-index: 10;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		/* transition: background-color 0.3s; */
+	}
+}
+
+@media (min-width: 768px) {
+	.swiper_button_prev,
+	.swiper_button_next {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.swiper_button_prev,
+	.swiper_button_next {
+		width: 50px;
+		height: 50px;
+	}
 }
 
 .swiper_button_prev:hover,
@@ -54,13 +72,29 @@
 }
 
 /* Ліва стрілка */
-.swiper_button_prev {
-	left: -100px;
+@media (min-width: 320px) {
+	.swiper_button_prev {
+		left: -50px;
+	}
+}
+
+@media (min-width: 768px) {
+	.swiper_button_prev {
+		left: -100px;
+	}
 }
 
 /* Права стрілка */
-.swiper_button_next {
-	right: -100px;
+@media (min-width: 320px) {
+	.swiper_button_next {
+		right: -50px;
+	}
+}
+
+@media (min-width: 768px) {
+	.swiper_button_next {
+		right: -100px;
+	}
 }
 
 .icon {

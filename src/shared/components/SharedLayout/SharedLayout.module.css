@@ -1,6 +1,25 @@
+@media (min-width: 320px) {
+	.container {
+		width: 350px;
+		margin: 0 auto;
+		padding: var(--header-height) 15px 0px 15px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 768px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container {
+		width: 1440px;
+		height: 100vh;
+		padding: var(--header-height) 64px 0px 64px;
+	}
+}
+
 .container {
-	width: 1440px;
 	margin: 0 auto;
-	padding: var(--header-height) 64px 0px 64px;
-	height: 100vh;
 }
