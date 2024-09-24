@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import css from './Sidebar.module.css';
+import css from './SideBar.module.css';
 
 export default forwardRef(function Sidebar({ isOpen, close }, ref) {
 	return (
