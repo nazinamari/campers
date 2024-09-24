@@ -11,6 +11,7 @@ import clsx from 'clsx';
 import Icon from '../../shared/components/Icon/Icon';
 import { toggleFavourite } from '../../redux/favourites/slice';
 import { useDispatch } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 
 export default function CamperCard({ camper }) {
 	const [open, setOpen] = useState(false);
@@ -25,10 +26,29 @@ export default function CamperCard({ camper }) {
 
 	const handleClose = () => setOpen(false);
 
+	const isMobile = useMediaQuery({
+		query: '(max-width: 767px)',
+	});
+
+	const isTablet = useMediaQuery({
+		query: '(min-width: 768px) and (max-width: 1439px)',
+	});
+
+	// const isDesktop = useMediaQuery({
+	// 	query: '(min-width: 1440px)',
+	// });
+
 	const modalStyles = {
 		content: {
-			width: '982px',
-			height: 'auto',
+			width: isMobile ? '350px' : isTablet ? '720px' : '982px',
+			inset: '0px',
+			padding: isMobile ? '20px' : '40px',
+			marginTop: isMobile ? '60px' : '0px',
+			maxHeight: '85vh',
+			overflow: 'auto',
+		},
+		overlay: {
+			overflow: 'hidden',
 		},
 	};
 
@@ -79,14 +99,16 @@ export default function CamperCard({ camper }) {
 					>
 						Show more
 					</Button>
-					<CustomModal
-						isOpen={open}
-						onRequestClose={handleClose}
-						title="All Features"
-						component={CamperDetailsModal}
-						componentProps={{ data: camper, initialTab }}
-						additionalStyles={modalStyles}
-					/>
+					{open && (
+						<CustomModal
+							isOpen={open}
+							onRequestClose={handleClose}
+							title="All Features"
+							component={CamperDetailsModal}
+							componentProps={{ data: camper, initialTab }}
+							additionalStyles={modalStyles}
+						/>
+					)}
 				</div>
 			</div>
 		</div>

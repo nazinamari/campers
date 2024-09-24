@@ -48,13 +48,29 @@
 	line-height: 30px;
 }
 
-.gallery {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 16px;
-	width: 902px;
-	height: 310px;
-	margin-top: 24px;
+@media (min-width: 320px) {
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 16px;
+		width: 310px;
+		height: auto;
+		margin-top: 16px;
+		align-items: center;
+	}
+}
+
+@media (min-width: 768px) {
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		gap: 16px;
+		width: 902px;
+		height: 310px;
+		margin-top: 24px;
+	}
 }
 
 .galleryItem {

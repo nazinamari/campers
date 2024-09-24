@@ -10,7 +10,15 @@
 
 .camperContent {
 	display: flex;
-	padding: 24px;
+	flex-direction: column;
+	padding: 20px;
+}
+
+@media (min-width: 768px) {
+	.camperContent {
+		flex-direction: row;
+		padding: 24px;
+	}
 }
 
 .camperImg {
@@ -21,10 +29,16 @@
 }
 
 .camperDetails {
-	width: 526px;
+	/* width: 526px; */
 	margin-left: 24px;
 	flex-grow: 1;
 	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	.camperDetails {
+		width: 526px;
+	}
 }
 
 .camperHeader {

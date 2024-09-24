@@ -21,10 +21,18 @@
 .form {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	gap: 14px;
-	width: 100%;
+	width: 250px;
 	margin: 0 auto;
 	margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+	.form {
+		width: 400px;
+	}
 }
 
 .btnSend {
@@ -62,4 +70,8 @@ textarea {
 	color: #ff4d4f;
 	font-size: 14px;
 	margin-top: -10px;
+}
+
+.dateContainer {
+	width: 100%;
 }

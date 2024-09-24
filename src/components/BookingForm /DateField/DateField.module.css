@@ -4,7 +4,13 @@
 
 .dateField {
 	padding-right: 30px;
-	width: 400px;
+	width: 250px;
+}
+
+@media (min-width: 768px) {
+	.dateField {
+		width: 400px;
+	}
 }
 
 .icon {

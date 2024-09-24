@@ -1,8 +1,8 @@
 @media (min-width: 320px) {
 	.container {
-		width: 350px;
+		width: 380px;
 		margin: 0 auto;
-		padding: var(--header-height) 15px 0px 15px;
+		padding: 90px 15px 0px 15px;
 	}
 }
 

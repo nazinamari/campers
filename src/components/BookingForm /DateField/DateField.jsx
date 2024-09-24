@@ -18,6 +18,7 @@ export default function DateField({ selectedDate, setSelectedDate }) {
 				dateFormat="dd.MM.yyyy"
 				placeholderText="Booking date"
 				className={css.dateField}
+				style={{ width: '100%' }}
 			/>
 			<Icon className={css.icon} id="i-booking" width="16" height="16" />
 		</div>
