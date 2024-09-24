@@ -22,6 +22,31 @@
 
 .btnMore {
 	margin-top: 32px;
-	width: 165px;
+	font-size: 14px;
+	width: 120px;
 	height: 56px;
+	padding: 10px;
+	background-color: var(--second-text-color);
+}
+
+.btnMore:hover {
+	background-color: var(--third-hover-accent-color);
+}
+
+.loadMorePosition {
+	display: flex;
+	justify-content: center;
+}
+
+@media (min-width: 320px) {
+	.loadMorePosition {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (min-width: 768px) {
+	.loadMorePosition {
+		display: block;
+	}
 }

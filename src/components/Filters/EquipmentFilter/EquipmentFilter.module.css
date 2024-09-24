@@ -5,21 +5,30 @@
 	margin-bottom: 20px;
 }
 
-.filterOption {
-	width: 115px;
-	height: 95px;
-	background-color: white;
-	border: 1px solid #10182833;
-	border-radius: 10px;
-	text-align: center;
-	cursor: pointer;
-	transition: all var(--transition);
-	/* padding: 17px 27px 17px 27px; */
-	position: relative;
+@media (min-width: 320px) {
+	.filterOption {
+		width: 100px;
+		height: 100px;
+		background-color: white;
+		border: 1px solid #10182833;
+		border-radius: 10px;
+		text-align: center;
+		cursor: pointer;
+		transition: all var(--transition);
+		position: relative;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px;
+	}
+}
+
+@media (min-width: 768px) {
+	.filterOption {
+		width: 115px;
+		height: 95px;
+	}
 }
 
 .checked {

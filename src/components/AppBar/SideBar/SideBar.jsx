@@ -1,10 +1,15 @@
 import { forwardRef } from 'react';
 import css from './SideBar.module.css';
+import Filters from '../../Filters/Filters';
+import Logo from '../../../shared/components/Logo/Logo';
 
 export default forwardRef(function Sidebar({ isOpen, close }, ref) {
 	return (
 		<div ref={ref} className={`${css.sidebar} ${isOpen ? css.open : ''}`}>
-			<button onClick={close}>Закрити</button>
+			{isOpen && <Filters close={close} />}
+			<div className={css.logo}>
+				<Logo />
+			</div>
 		</div>
 	);
 });

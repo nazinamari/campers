@@ -28,7 +28,7 @@
 	letter-spacing: 0.06em;
 	text-rendering: optimizeLegibility;
 	text-decoration: none;
-	color: #6bb7ff;
+	color: var(--third-accent-color);
 	margin-top: 24px;
 
 	display: flex;
@@ -45,7 +45,7 @@
 }
 
 .link:hover {
-	color: #3fa0fc;
+	color: var(--third-hover-accent-color);
 	stroke: var(--accent-hover-color);
 }
 
@@ -116,7 +116,7 @@
 }
 
 .click:hover {
-	stroke: #ffb701;
+	stroke: var(--second-hover-accent-color);
 }
 
 .clickText {
@@ -124,5 +124,5 @@
 }
 
 .clickText:hover {
-	color: #ffb701;
+	color: var(--second-hover-accent-color);
 }

@@ -16,7 +16,7 @@ import {
 	fetchFilteredCampers,
 } from '../../redux/catalog/operations';
 
-export default function Filters() {
+export default function Filters({ close }) {
 	const dispatch = useDispatch();
 	const location = useSelector(selectLocation);
 	const equipment = useSelector(selectEquipment);
@@ -28,6 +28,7 @@ export default function Filters() {
 		} else {
 			dispatch(fetchFilteredCampers());
 		}
+		close();
 	};
 
 	return (
@@ -57,9 +58,11 @@ export default function Filters() {
 					/>
 				</li>
 			</List>
-			<Button className={css.searchBtn} onClick={handleSearchClick}>
-				Search
-			</Button>
+			<div className={css.btnSearchPosition}>
+				<Button className={css.searchBtn} onClick={handleSearchClick}>
+					Search
+				</Button>
+			</div>
 		</aside>
 	);
 }

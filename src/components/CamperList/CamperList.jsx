@@ -49,13 +49,15 @@ export default function CamperList() {
 				</List>
 			)}
 			{!isLoading && !isLastPage && allCampers.length > 0 && (
-				<Button
-					onClick={handleLoadMore}
-					disabled={isLoading}
-					className={css.btnMore}
-				>
-					{isLoading ? 'Loading' : 'Load More'}
-				</Button>
+				<div className={css.loadMorePosition}>
+					<Button
+						onClick={handleLoadMore}
+						disabled={isLoading}
+						className={css.btnMore}
+					>
+						{isLoading ? 'Loading' : 'Load More'}
+					</Button>
+				</div>
 			)}
 		</section>
 	);

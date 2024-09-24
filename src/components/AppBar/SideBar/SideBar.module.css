@@ -1,8 +1,8 @@
 .sidebar {
 	position: fixed;
 	top: 0;
-	left: -250px; /* Сховане положення */
-	width: 250px;
+	left: -350px; /* Сховане положення */
+	width: 350px;
 	height: 100%;
 	background-color: white; /* Змінити на потрібний фон */
 	transition: left 0.3s ease; /* Анімація при відкритті/закритті */
@@ -11,4 +11,8 @@
 
 .sidebar.open {
 	left: 0; /* Показує сайдбар */
+}
+
+.logo {
+	margin-top: 40px;
 }

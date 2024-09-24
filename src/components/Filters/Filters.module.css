@@ -1,6 +1,13 @@
 .filters {
 	width: 360px;
 	background-color: #fff;
+	padding: 20px;
+}
+
+@media (min-width: 768px) {
+	.filters {
+		padding: 0px;
+	}
 }
 
 .filter__list {
@@ -40,6 +47,20 @@
 	padding-left: 60px;
 	padding-right: 60px;
 	margin-top: 64px;
+}
+
+@media (min-width: 320px) {
+	.btnSearchPosition {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (min-width: 768px) {
+	.btnSearchPosition {
+		display: block;
+		justify-content: center;
+	}
 }
 
 .equipmentFilter {
