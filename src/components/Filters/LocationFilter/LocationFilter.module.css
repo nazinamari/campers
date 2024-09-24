@@ -29,7 +29,7 @@
 }
 
 .locationInput:focus {
-	border-color: var(--focus-border-color);
+	border-color: var(--second-text-color);
 	outline: none;
 }
 

@@ -64,3 +64,7 @@
 .link:focus::after {
 	transform: scaleX(1);
 }
+
+.burger {
+	stroke: var(--second-text-color);
+}

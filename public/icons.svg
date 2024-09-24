@@ -121,5 +121,9 @@
     <symbol id="i-click" viewBox="0 0 32 32">
       <path d="M2.667 16v-2.667h4V16h-4zM7.2 23.4l-1.867-1.933 2.8-2.8 1.933 1.867-2.867 2.867zm.933-12.733-2.8-2.8L7.2 5.934l2.867 2.867-1.933 1.867zm15.867 16-6.333-6.333-1.667 5-4-13.333 13.333 4-4.933 1.733 6.267 6.267L24 26.668zM13.333 8V4H16v4h-2.667zm7.867 2.667L19.267 8.8l2.867-2.867L24.001 7.8l-2.8 2.867z"/>
     </symbol>
+
+    <symbol id="i-burger" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16h24M4 8h24M4 24h24" />
+    </symbol>
   </defs>
 </svg>

@@ -16,6 +16,13 @@
 
 @media (min-width: 768px) {
 	.camperContent {
+		flex-direction: column;
+		padding: 24px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.camperContent {
 		flex-direction: row;
 		padding: 24px;
 	}
