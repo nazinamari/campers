@@ -29,7 +29,7 @@ export default function HomePage() {
 				</p>
 				<Link to="/catalog" className={css.link}>
 					Visit our Catalog&nbsp;
-					<Icon className={css.click} id="i-click" width="50" height="50" />
+					<Icon className={css.click} id="i-click" />
 					<span className={css.clickText}>&nbsp;Explore Now</span>
 				</Link>
 			</div>
