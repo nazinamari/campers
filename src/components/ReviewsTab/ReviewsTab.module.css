@@ -1,7 +1,14 @@
 .tab_container {
 	margin-top: 44px;
 	display: flex;
+	flex-direction: column;
 	gap: 24px;
+}
+
+@media (min-width: 768px) {
+	.tab_container {
+		flex-direction: row;
+	}
 }
 
 .left,
