@@ -24,6 +24,7 @@
 - **Axios**: Для виконання HTTP-запитів.
 - **Swiper**: Для реалізації слайдеру.
 - **Local Storage**: Для зберігання даних, таких як обрані кемпери, у браузері користувача навіть після перезавантаження сторінки.
+- **Responsive Design**: Для гнучкого відображення сайту на будь-яких пристроях і розмірах екранів.
 
 ### Основні функції
 
@@ -74,6 +75,7 @@
 - **Axios**: For making HTTP requests.
 - **Swiper**: For creating sliders.
 - **Local Storage**: To store data, such as favorite campers, in the user's browser, even after page reloads.
+- **Responsive Design**: For flexible display across different devices and screen sizes.
 
 ### Key Features
 

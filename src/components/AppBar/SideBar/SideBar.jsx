@@ -4,26 +4,22 @@ import Filters from '../../Filters/Filters';
 import Logo from '../../../shared/components/Logo/Logo';
 
 export default forwardRef(function Sidebar({ isOpen, close }, ref) {
-	// Використовуємо useEffect для блокування прокрутки при відкритті сайдбару
 	useEffect(() => {
 		if (isOpen) {
-			document.body.style.overflow = 'hidden'; // Блокуємо прокрутку сторінки
+			document.body.style.overflow = 'hidden';
 		} else {
-			document.body.style.overflow = ''; // Відновлюємо прокрутку
+			document.body.style.overflow = '';
 		}
 
-		// Повертаємо функцію очищення, щоб скинути прокрутку при розмонтуванні
 		return () => {
-			document.body.style.overflow = ''; // Скидаємо стиль overflow при закритті або розмонтуванні
+			document.body.style.overflow = '';
 		};
 	}, [isOpen]);
 
 	return (
 		<div ref={ref} className={`${css.sidebar} ${isOpen ? css.open : ''}`}>
-			{/* Рендеримо фільтри тільки якщо сайдбар відкритий */}
 			{isOpen && <Filters close={close} />}
 
-			{/* Логотип */}
 			<div className={css.logo}>
 				<Logo />
 			</div>
