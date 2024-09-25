@@ -2,7 +2,7 @@
 
 ## Опис проекту
 
-**Campers App** — це веб-застосунок для бронювання кемперов. Він дозволяє користувачам шукати та зберігати улюблені кемпери, а також вибирати дати для бронювання за допомогою інтуїтивно зрозумілого інтерфейсу.
+**Campers App** — це респонсивний веб-додаток для бронювання кемперів. Він дозволяє користувачам шукати та зберігати свої улюблені кемпери, а також вибирати дати для бронювання через інтуїтивно зрозумілий інтерфейс.
 
 ### Journey Made Simple
 
@@ -53,7 +53,7 @@
 
 ## Project Description
 
-**Campers App** is a web application for booking campers. It allows users to search for and save their favorite campers, as well as select booking dates through an intuitive interface.
+**Campers App** is a responsive web application for booking campers. It allows users to search for and save their favorite campers and select booking dates through an intuitive interface.
 
 ### Journey Made Simple
 
@@ -65,7 +65,7 @@
 
 - **React**: A library for building user interfaces.
 - **Redux Toolkit**: For state management.
-- **React Router**: For navigation between different pages of the app.
+- **React Router**: For navigation between different app pages.
 - **React Modal**: For implementing modal windows.
 - **CSS Modules**: For styling components.
 - **clsx**: A utility for conditionally combining CSS classes, simplifying style management.
@@ -74,7 +74,7 @@
 - **React DatePicker**: For selecting dates.
 - **Axios**: For making HTTP requests.
 - **Swiper**: For creating sliders.
-- **Local Storage**: To store data, such as favorite campers, in the user's browser, even after page reloads.
+- **Local Storage**: To store data, such as favorite campers, in the user's browser, even after the page reloads.
 - **Responsive Design**: For flexible display across different devices and screen sizes.
 
 ### Key Features
